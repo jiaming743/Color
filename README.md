@@ -127,7 +127,7 @@ const after = lighten(color, 20)
 
 
 
-### toHex
+#### toHex
 
 ```javascript
 /**
