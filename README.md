@@ -68,7 +68,7 @@ function darken (color, percent) {
 const before = '#3080E8'
 
 const after = darken(color, 20)
-// after = rgba(0,78,182,1)
+// after = 'rgba(0,78,182,1)'
 ```
 
 <p align="center">
@@ -93,7 +93,7 @@ function lighten (color, percent) {
 const before = '#3080E8'
 
 const after = lighten(color, 20)
-// after = rgba(98,178,255,1)
+// after = 'rgba(98,178,255,1)'
 ```
 
 <p align="center">
@@ -118,7 +118,7 @@ function fade (color, percent) {
 const before = '#3080E8'
 
 const after = lighten(color, 20)
-// after = rgba(48,128,232,0.2)
+// after = 'rgba(48,128,232,0.2)'
 ```
 
 <p align="center">
@@ -142,7 +142,7 @@ function toHex (color) {
 const before = 'rgb(48,128,232)'
 
 const after = toHex(before)
-// after = #3080e8
+// after = '#3080e8'
 ```
 
 
@@ -163,9 +163,9 @@ function toRgb (color, opacity) {
 const before = '#3080E8'
 
 const after1 = toRgb(before)
-// after1 = rgb(48,128,232)
+// after1 = 'rgb(48,128,232)'
 const after2 = toRgb(before, 0.2)
-// after2 = rgba(48,128,232,0.2)
+// after2 = 'rgba(48,128,232,0.2)'
 ```
 
 
