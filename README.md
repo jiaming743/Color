@@ -6,40 +6,39 @@
 </p>
 
 ### This plugin provides some extension methods for color.
-
-- **darken**
+- **[darken](#darken)**
 
   Deepen color
 
-- **lighten**
+- **[lighten](#lighten)**
 
   Brighten color
 
-- **fade**
+- **[fade](#fade)**
 
   Adjust color opacity
 
-- **toHex**
+- **[toHex](#toHex)**
 
   Convert color to hex color
 
-- **toRgb**
+- **[toRgb](#toRgb)**
 
   Convert color to rgb/rgba color
 
-- **getOpacity**
+- **[getOpacity](#getOpacity)**
 
   Get color opacity
 
-- **getRgbValue**
+- **[getRgbValue](#getRgbValue)**
 
   Get the color rgb value
 
-- **getRgbaValue**
+- **[getRgbaValue](#getRgbaValue)**
 
   Get the color rgba value
 
-- **getColorFromRgbValue**
+- **[getColorFromRgbValue](#getColorFromRgbValue)**
 
   Get Color from rgb value
 
