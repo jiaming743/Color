@@ -72,10 +72,9 @@ const after = darken(color, 20)
 // after = rgba(0,78,182,1)
 ```
 
-<div style="display: flex; justify-content:center; color:#fff; line-height:70px;text-align:center;">
-    <div style="width: 70px; height: 70px; margin: 0 20px; background-color: #3080E8;">Before</div>
-    <div style="width: 70px; height: 70px; margin: 0 20px; background-color: rgba(0,78,182,1);">After</div>
-</div>
+<p align="center">
+    <img width="180px" src="./exampleImgs/1.jpg" />
+</p>
 
 
 
@@ -98,10 +97,9 @@ const after = lighten(color, 20)
 // after = rgba(98,178,255,1)
 ```
 
-<div style="display: flex; justify-content:center; color:#fff; line-height:70px;text-align:center;">
-    <div style="width: 70px; height: 70px; margin: 0 20px; background-color: #3080E8;">Before</div>
-    <div style="width: 70px; height: 70px; margin: 0 20px; background-color: rgba(98,178,255,1);">After</div>
-</div>
+<p align="center">
+    <img width="180px" src="./exampleImgs/2.jpg" />
+</p>
 
 
 
@@ -124,10 +122,9 @@ const after = lighten(color, 20)
 // after = rgba(48,128,232,0.2)
 ```
 
-<div style="display: flex; justify-content:center; color:#fff; line-height:70px;text-align:center;">
-    <div style="width: 70px; height: 70px; margin: 0 20px; background-color: #3080E8;">Before</div>
-    <div style="width: 70px; height: 70px; margin: 0 20px; background-color: rgba(48,128,232,0.2);">After</div>
-</div>
+<p align="center">
+    <img width="180px" src="./exampleImgs/3.jpg" />
+</p>
 
 
 
