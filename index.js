@@ -7,7 +7,7 @@ const rgbaReg = /^(rgba|RGBA)/
  * @param {String} color Hex or rgb/rgba color
  * @return {Array} Rgb value of the color
  */
-function getRgbValue (color) {
+export function getRgbValue (color) {
   if (!color) {
     console.error('Missing parameters!')
 
@@ -63,7 +63,7 @@ function getRgbValueFromRgb (color) {
  * @param {Number}  opacity The opacity of color
  * @return {String} Rgb/rgba color
  */
-function toRgb (color, opacity) {
+export function toRgb (color, opacity) {
   if (!color) {
     console.error('Missing parameters!')
     
@@ -84,7 +84,7 @@ function toRgb (color, opacity) {
  * @param {String}  color Hex or rgb/rgba color
  * @return {String} Hex color
  */
-function toHex (color) {
+export function toHex (color) {
   if (!color) {
     console.error('Missing parameters!')
 
@@ -114,7 +114,7 @@ function toHex (color) {
  * @param {String}  color Hex or rgb/rgba color
  * @return {Number} Color opacity
  */
-function getOpacity (color) {
+export function getOpacity (color) {
   if (!color) {
     console.error('Missing parameters!')
     
@@ -135,7 +135,7 @@ function getOpacity (color) {
  * @param {String} color Hex or rgb/rgba color
  * @return {Array} Rgba value of the color
  */
-function getRgbaValue (color) {
+export function getRgbaValue (color) {
   if (!color) {
     console.error('Missing parameters!')
 
@@ -149,7 +149,12 @@ function getRgbaValue (color) {
   return colorValue
 }
 
-function getColorFromRgbValue (value) {
+/**
+ * @description     Get Color from rgb value
+ * @param {Array}   value Rgb color value
+ * @return {String} Rgb / rgba color
+ */
+export function getColorFromRgbValue (value) {
   if (!value) {
     console.error('Missing parameters!')
 
@@ -171,7 +176,13 @@ function getColorFromRgbValue (value) {
   return color
 }
 
-function darken (color, percent) {
+/**
+ * @description     Deepen color
+ * @param {String}  color Hex or rgb/rgba color
+ * @return {Number} Percent of Deepen
+ * @return {String} Rgba color
+ */
+export function darken (color, percent) {
   if (!color) {
     console.error('Missing parameters!')
 
@@ -189,7 +200,13 @@ function darken (color, percent) {
   return getColorFromRgbValue(rgbaValue)
 }
 
-function lighten (color, percent) {
+/**
+ * @description     Brighten color
+ * @param {String}  color Hex or rgb/rgba color
+ * @return {Number} Percent of brighten
+ * @return {String} Rgba color
+ */
+export function lighten (color, percent) {
   if (!color) {
     console.error('Missing parameters!')
 
