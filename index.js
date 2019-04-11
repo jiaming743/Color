@@ -3,7 +3,7 @@ const rgbReg = /^(rgb|rgba|RGB|RGBA)/
 const rgbaReg = /^(rgba|RGBA)/
 
 /**
- * @description    Get the rgb value of the color
+ * @description Get the rgb value of the color
  * @param {String} color Hex or rgb/rgba color
  * @return {Array} Rgb value of the color
  */
@@ -30,7 +30,7 @@ export function getRgbValue (color) {
 }
 
 /**
- * @description    Get the rgb value of the hex color
+ * @description Get the rgb value of the hex color
  * @param {String} color Hex color
  * @return {Array} Rgb value of the color
  */
@@ -45,7 +45,7 @@ function getRgbValueFromHex (color) {
 }
 
 /**
- * @description    Get the rgb value of the rgb/rgba color
+ * @description Get the rgb value of the rgb/rgba color
  * @param {String} color Hex color
  * @return {Array} Rgb value of the color
  */
@@ -58,9 +58,9 @@ function getRgbValueFromRgb (color) {
 }
 
 /**
- * @description     Convert color to rgb/rgba color
- * @param {String}  color Hex or rgb/rgba color
- * @param {Number}  opacity The opacity of color
+ * @description Convert color to rgb/rgba color
+ * @param {String} color   Hex or rgb/rgba color
+ * @param {Number} opacity The opacity of color
  * @return {String} Rgb/rgba color
  */
 export function toRgb (color, opacity) {
@@ -80,8 +80,8 @@ export function toRgb (color, opacity) {
 }
 
 /**
- * @description     Convert color to hex color
- * @param {String}  color Hex or rgb/rgba color
+ * @description Convert color to hex color
+ * @param {String} color Hex or rgb/rgba color
  * @return {String} Hex color
  */
 export function toHex (color) {
@@ -110,8 +110,8 @@ export function toHex (color) {
 }
 
 /**
- * @description     Get the opacity of color
- * @param {String}  color Hex or rgb/rgba color
+ * @description Get the opacity of color
+ * @param {String} color Hex or rgb/rgba color
  * @return {Number} Color opacity
  */
 export function getOpacity (color) {
@@ -131,7 +131,7 @@ export function getOpacity (color) {
 }
 
 /**
- * @description    Get the rgba value of the color
+ * @description Get the rgba value of the color
  * @param {String} color Hex or rgb/rgba color
  * @return {Array} Rgba value of the color
  */
@@ -150,8 +150,8 @@ export function getRgbaValue (color) {
 }
 
 /**
- * @description     Get Color from rgb value
- * @param {Array}   value Rgb color value
+ * @description Get Color from rgb value
+ * @param {Array} value Rgb color value
  * @return {String} Rgb / rgba color
  */
 export function getColorFromRgbValue (value) {
@@ -177,8 +177,8 @@ export function getColorFromRgbValue (value) {
 }
 
 /**
- * @description     Deepen color
- * @param {String}  color Hex or rgb/rgba color
+ * @description Deepen color
+ * @param {String} color Hex or rgb/rgba color
  * @return {Number} Percent of Deepen
  * @return {String} Rgba color
  */
@@ -201,8 +201,8 @@ export function darken (color, percent) {
 }
 
 /**
- * @description     Brighten color
- * @param {String}  color Hex or rgb/rgba color
+ * @description Brighten color
+ * @param {String} color Hex or rgb/rgba color
  * @return {Number} Percent of brighten
  * @return {String} Rgba color
  */
