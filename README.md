@@ -8,44 +8,44 @@
 ### This plugin provides some extension methods for color.
 - **[darken](#darken)**
 
-  Deepen color
+  Deepen color.
 
 - **[lighten](#lighten)**
 
-  Brighten color
+  Brighten color.
 
 - **[fade](#fade)**
 
-  Adjust color opacity
+  Adjust color opacity.
 
 - **[toHex](#toHex)**
 
-  Convert color to hex color
+  Convert color to hex color.
 
 - **[toRgb](#toRgb)**
 
-  Convert color to rgb/rgba color
+  Convert color to rgb/rgba color.
 
 - **[getOpacity](#getOpacity)**
 
-  Get color opacity
+  Get color opacity.
 
 - **[getRgbValue](#getRgbValue)**
 
-  Get the color rgb value
+  Get the color rgb value.
 
 - **[getRgbaValue](#getRgbaValue)**
 
-  Get the color rgba value
+  Get the color rgba value.
 
 - **[getColorFromRgbValue](#getColorFromRgbValue)**
 
-  Get Color from rgb value
+  Get Color from rgb value.
 
 ### Install with npm
 
 ```shell
-npm install @jiaminghi/color
+$ npm install @jiaminghi/color
 ```
 
 ------
@@ -56,8 +56,8 @@ npm install @jiaminghi/color
 
 ```javascript
 /**
- * @description     Deepen color
- * @param {String}  color Hex or rgb/rgba color
+ * @description Deepen color
+ * @param {String} color Hex or rgb/rgba color
  * @return {Number} Percent of Deepen
  * @return {String} Rgba color
  */
@@ -81,8 +81,8 @@ const after = darken(color, 20)
 
 ```javascript
 /**
- * @description     Brighten color
- * @param {String}  color Hex or rgb/rgba color
+ * @description Brighten color
+ * @param {String} color Hex or rgb/rgba color
  * @return {Number} Percent of brighten
  * @return {String} Rgba color
  */
@@ -106,8 +106,8 @@ const after = lighten(color, 20)
 
 ```javascript
 /**
- * @description     Adjust color opacity
- * @param {String}  color Hex or rgb/rgba color
+ * @description Adjust color opacity
+ * @param {String} color Hex or rgb/rgba color
  * @return {Number} Percent of opacity
  * @return {String} Rgba color
  */
@@ -131,8 +131,8 @@ const after = lighten(color, 20)
 
 ```javascript
 /**
- * @description     Convert color to hex color
- * @param {String}  color Hex or rgb/rgba color
+ * @description Convert color to hex color
+ * @param {String} color Hex or rgb/rgba color
  * @return {String} Hex color
  */
 function toHex (color) {
@@ -151,9 +151,9 @@ const after = toHex(before)
 
 ```javascript
 /**
- * @description     Convert color to rgb/rgba color
- * @param {String}  color Hex or rgb/rgba color
- * @param {Number}  opacity The opacity of color
+ * @description Convert color to rgb/rgba color
+ * @param {String} color   Hex or rgb/rgba color
+ * @param {Number} opacity The opacity of color
  * @return {String} Rgb/rgba color
  */
 function toRgb (color, opacity) {
@@ -174,8 +174,8 @@ const after2 = toRgb(before, 0.2)
 
 ```javascript
 /**
- * @description     Get the opacity of the color
- * @param {String}  color Hex or rgb/rgba color
+ * @description Get the opacity of the color
+ * @param {String} color Hex or rgb/rgba color
  * @return {Number} Color opacity
  */
 function getOpacity (color) {
@@ -198,7 +198,7 @@ const opacity2 = getOpacity(color2)
 
 ```javascript
 /**
- * @description    Get the color rgb value
+ * @description Get the color rgb value
  * @param {String} color Hex or rgb/rgba color
  * @return {Array} Rgb value of the color
  */
@@ -218,7 +218,7 @@ const rgbValue = getRgbValue(color)
 
 ```javascript
 /**
- * @description    Get the color rgba value
+ * @description Get the color rgba value
  * @param {String} color Hex or rgb/rgba color
  * @return {Array} Rgba value of the color
  */
@@ -241,8 +241,8 @@ const rgbaValue2 = getRgbaValue(color2)
 
 ```javascript
 /**
- * @description     Get Color from rgb value
- * @param {Array}   value Rgb color value
+ * @description Get Color from rgb value
+ * @param {Array} value Rgb color value
  * @return {String} Rgb / rgba color
  */
 function getColorFromRgbValue (value) {
