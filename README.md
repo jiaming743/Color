@@ -108,7 +108,7 @@ const after = lighten(color, 20)
 /**
  * @description Adjust color opacity
  * @param {String} color Hex or rgb/rgba color
- * @return {Number} Percent of opacity
+ * @param {Number} Percent of opacity
  * @return {String} Rgba color
  */
 function fade (color, percent) {
