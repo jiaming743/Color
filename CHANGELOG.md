@@ -1,3 +1,9 @@
+# 0.0.3-alpha (2019-04-30)
+
+### Bug Fixes
+
+* **getOpacity:** Abnormal calculation due to spaces.
+
 # 0.0.2-alpha (2019-04-08)
 
 ### Publish
