@@ -243,6 +243,7 @@ export function fade (color, percent = 100) {
 
   return getColorFromRgbValue(rgbaValue)
 }
+
 export default {
   darken,
   lighten,
