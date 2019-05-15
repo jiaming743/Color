@@ -224,12 +224,33 @@ export function lighten (color, percent) {
   return getColorFromRgbValue(rgbaValue)
 }
 
+/**
+ * @description Adjust color opacity
+ * @param {String} color   Hex or rgb/rgba color
+ * @param {Number} Percent of opacity
+ * @return {String} Rgba color
+ */
+export function fade (color, percent = 100) {
+  if (!color) {
+    console.error('Missing parameters!')
+
+    return
+  }
+
+  const rgbValue = getRgbValue(color)
+  
+  const rgbaValue = [...rgbValue, percent / 100]
+
+  return getColorFromRgbValue(rgbaValue)
+}
 export default {
-  getRgbValue,
-  getRgbaValue,
-  toHex,
-  toRgb,
   darken,
   lighten,
+  fade,
+  toHex,
+  toRgb,
+  getOpacity,
+  getRgbValue,
+  getRgbaValue,
   getColorFromRgbValue
 }
