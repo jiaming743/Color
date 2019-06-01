@@ -9,7 +9,7 @@ const rgbaReg = /^(rgba|RGBA)/
  */
 export function getRgbValue (color) {
   if (!color) {
-    console.error('Missing parameters!')
+    console.error('GetRgbValue Missing parameters!')
 
     return
   }
@@ -65,7 +65,7 @@ function getRgbValueFromRgb (color) {
  */
 export function toRgb (color, opacity) {
   if (!color) {
-    console.error('Missing parameters!')
+    console.error('ToRgb Missing parameters!')
     
     return
   }
@@ -86,7 +86,7 @@ export function toRgb (color, opacity) {
  */
 export function toHex (color) {
   if (!color) {
-    console.error('Missing parameters!')
+    console.error('ToHex Missing parameters!')
 
     return
   }
@@ -116,8 +116,8 @@ export function toHex (color) {
  */
 export function getOpacity (color) {
   if (!color) {
-    console.error('Missing parameters!')
-    
+    console.error('GetOpacity Missing parameters!')
+
     return
   }
 
@@ -137,7 +137,7 @@ export function getOpacity (color) {
  */
 export function getRgbaValue (color) {
   if (!color) {
-    console.error('Missing parameters!')
+    console.error('GetRgbaValue Missing parameters!')
 
     return
   }
@@ -156,7 +156,7 @@ export function getRgbaValue (color) {
  */
 export function getColorFromRgbValue (value) {
   if (!value) {
-    console.error('Missing parameters!')
+    console.error('GetColorFromRgbValue Missing parameters!')
 
     return
   }
@@ -184,7 +184,7 @@ export function getColorFromRgbValue (value) {
  */
 export function darken (color, percent) {
   if (!color) {
-    console.error('Missing parameters!')
+    console.error('Darken Missing parameters!')
 
     return
   }
@@ -208,7 +208,7 @@ export function darken (color, percent) {
  */
 export function lighten (color, percent) {
   if (!color) {
-    console.error('Missing parameters!')
+    console.error('Lighten Missing parameters!')
 
     return
   }
@@ -232,7 +232,7 @@ export function lighten (color, percent) {
  */
 export function fade (color, percent = 100) {
   if (!color) {
-    console.error('Missing parameters!')
+    console.error('Fade Missing parameters!')
 
     return
   }
