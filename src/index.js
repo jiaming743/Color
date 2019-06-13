@@ -127,7 +127,7 @@ export function getOpacity (color) {
 
   if (!isRgba) return 1
 
-  return Number(color.replace(/^(rgba\()|(\s*\d+\s*,){3}|(\))/g, ''))
+  return Number(color.split(',').slice(-1)[0].replace(/[)|\s]/g, ''))
 }
 
 /**
