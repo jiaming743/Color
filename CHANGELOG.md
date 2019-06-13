@@ -1,3 +1,9 @@
+# 0.0.6-alpha (2019-06-13)
+
+### Bug Fixes
+
+- **getOpacity:** Fix the exception caused by the decimal in the rgba color (Like 'rgba(123.3333, 111, 111, 0.323)').
+
 # 0.0.5-alpha (2019-06-06)
 
 ### Perfect
