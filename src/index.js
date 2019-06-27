@@ -66,7 +66,7 @@ function getRgbValueFromRgb (color) {
 export function toRgb (color, opacity) {
   if (!color) {
     console.error('ToRgb Missing parameters!')
-    
+
     return
   }
 
@@ -238,7 +238,7 @@ export function fade (color, percent = 100) {
   }
 
   const rgbValue = getRgbValue(color)
-  
+
   const rgbaValue = [...rgbValue, percent / 100]
 
   return getColorFromRgbValue(rgbaValue)
