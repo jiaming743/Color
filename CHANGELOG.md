@@ -1,3 +1,9 @@
+# 0.0.7-alpha (2019-07-06)
+
+### Perfect
+
+- **keywords:** Support color keywords.
+
 # 0.0.6-alpha (2019-06-13)
 
 ### Bug Fixes
