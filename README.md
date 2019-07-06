@@ -3,7 +3,7 @@
 <p align="center">
     <a href="https://github.com/jiaming743/Color/blob/master/LICENSE"><img src="https://img.shields.io/github/license/jiaming743/bezierCurve.svg" alt="LICENSE" /> </a>
     <a href="https://www.npmjs.com/package/@jiaminghi/color"><img src="https://img.shields.io/npm/v/@jiaminghi/color.svg" alt="NPM" /> </a>
-    <a href="https://travis-ci.com/jiaming743/Color"><img src="https://img.shields.io/appveyor/ci/jiaming743/color.svg" alt="Travis CI"></a>
+    <a href="https://travis-ci.com/jiaming743/Color"><img src="https://img.shields.io/travis/com/jiaming743/color.svg" alt="Travis CI"></a>
 </p>
 
 ### This plugin provides some extension methods for color.
