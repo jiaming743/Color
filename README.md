@@ -3,6 +3,7 @@
 <p align="center">
     <a href="https://github.com/jiaming743/Color/blob/master/LICENSE"><img src="https://img.shields.io/github/license/jiaming743/bezierCurve.svg" alt="LICENSE" /> </a>
     <a href="https://www.npmjs.com/package/@jiaminghi/color"><img src="https://img.shields.io/npm/v/@jiaminghi/color.svg" alt="NPM" /> </a>
+    <a href="https://travis-ci.com/jiaming743/Color"><img src="https://img.shields.io/appveyor/ci/jiaming743/color.svg" alt="Travis CI"></a>
 </p>
 
 ### This plugin provides some extension methods for color.
@@ -68,7 +69,7 @@ function darken (color, percent) {
 const before = '#3080E8'
 
 const after = darken(color, 20)
-// after = 'rgba(0,78,182,1)'
+// after = 'rgba(0,77,181,1)'
 ```
 
 <p align="center">
@@ -93,7 +94,7 @@ function lighten (color, percent) {
 const before = '#3080E8'
 
 const after = lighten(color, 20)
-// after = 'rgba(98,178,255,1)'
+// after = 'rgba(99,179,255,1)'
 ```
 
 <p align="center">
@@ -200,7 +201,7 @@ const opacity2 = getOpacity(color2)
 /**
  * @description Get the color rgb value
  * @param {String} color Hex or rgb/rgba color
- * @return {Array} Rgb value of the color
+ * @return {Array<Number>} Rgb value of the color
  */
 function getRgbValue (color) {
 	//...
@@ -220,7 +221,7 @@ const rgbValue = getRgbValue(color)
 /**
  * @description Get the color rgba value
  * @param {String} color Hex or rgb/rgba color
- * @return {Array} Rgba value of the color
+ * @return {Array<Number>} Rgba value of the color
  */
 function getRgbaValue (color) {
 	//...
@@ -242,7 +243,7 @@ const rgbaValue2 = getRgbaValue(color2)
 ```javascript
 /**
  * @description Get Color from rgb value
- * @param {Array} value Rgb color value
+ * @param {Array<Number>} value Rgb color value
  * @return {String} Rgb / rgba color
  */
 function getColorFromRgbValue (value) {
