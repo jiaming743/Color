@@ -347,7 +347,7 @@ describe('getOpacity', () => {
     expect(getOpacity('black')).to.equal(1)
   })
 
-  it(`transparent`, () => {
+  it(`getOpacity('transparent')`, () => {
     expect(getOpacity('transparent')).to.equal(0)
   })
 })
