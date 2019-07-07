@@ -44,7 +44,7 @@ function getColorByKeyword (keyword) {
 }
 
 /**
- * @description Get the rgb value of the color
+ * @description Get the Rgb value of the color
  * @param {String} color Hex|Rgb|Rgba color or color keyword
  * @return {Array<Number>|Boolean} Rgb value of the color (Invalid input will return false)
  */
@@ -97,7 +97,7 @@ function getRgbValueFromRgb (color) {
 }
 
 /**
- * @description Get the rgba value of the color
+ * @description Get the Rgba value of the color
  * @param {String} color Hex|Rgb|Rgba color or color keyword
  * @return {Array<Number>|Boolean} Rgba value of the color (Invalid input will return false)
  */
@@ -143,7 +143,7 @@ export function getOpacity (color) {
 }
 
 /**
- * @description Convert color to rgb/rgba color
+ * @description Convert color to Rgb|Rgba color
  * @param {String} color   Hex|Rgb|Rgba color or color keyword
  * @param {Number} opacity The opacity of color
  * @return {String|Boolean} Rgb|Rgba color (Invalid input will return false)
@@ -167,8 +167,8 @@ export function toRgb (color, opacity) {
 }
 
 /**
- * @description Convert color to hex color
- * @param {String} color Hex or rgb/rgba color
+ * @description Convert color to Hex color
+ * @param {String} color Hex|Rgb|Rgba color or color keyword
  * @return {String|Boolean} Hex color (Invalid input will return false)
  */
 export function toHex (color) {
