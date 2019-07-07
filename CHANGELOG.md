@@ -1,8 +1,8 @@
-# 0.0.7-alpha (2019-07-06)
+# 0.1.0-alpha (2019-07-07)
 
 ### Perfect
 
-- **keywords:** Support color keywords.
+- **keywords:** Support color keywords like red, blue, transparent and etc.
 
 # 0.0.6-alpha (2019-06-13)
 
