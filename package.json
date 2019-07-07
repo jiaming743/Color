@@ -31,7 +31,6 @@
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
     "@babel/register": "^7.4.4",
-    "babel-register": "^6.26.0",
     "chai": "^4.2.0",
     "mocha": "^6.1.4"
   },
