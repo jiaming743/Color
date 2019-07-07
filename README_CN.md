@@ -66,7 +66,7 @@ color.toHex('black')
 
 ------
 
-<h3 align="center">Examples</h3>
+<h3 align="center">示例</h3>
 
 #### darken
 
