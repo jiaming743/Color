@@ -58,9 +58,9 @@ $ npm install @jiaminghi/color
 ### Use
 
 ```javascript
-import color from '@jiaminghi/color'
+import { toHex } from '@jiaminghi/color'
 
-color.toHex('black')
+// do something
 ```
 
 ------
