@@ -46,7 +46,7 @@
 
   从Rgb或Rgba值获取颜色
 
-- **[keywords](#keywords)**
+- **[颜色关键字](#颜色关键字)**
 
   内置颜色关键字
 
@@ -275,7 +275,7 @@ const color2 = getColorFromRgbValue(value2)
 
 
 
-#### 关键字
+#### 颜色关键字
 
 <p align="center">
     <img width="750px" src="./exampleImgs/keywords.png" />

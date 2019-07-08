@@ -45,7 +45,7 @@
 
   Get Color from Rgb|Rgba value.
 
-- **[keywords](#keywords)**
+- **[Color Keywords](#Color-Keywords)**
 
   Built-in color keywords.
 
@@ -274,7 +274,7 @@ const color2 = getColorFromRgbValue(value2)
 
 
 
-#### keywords
+#### Color Keywords
 
 <p align="center">
     <img width="750px" src="./exampleImgs/keywords.png" />
