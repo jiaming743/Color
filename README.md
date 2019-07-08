@@ -1,4 +1,4 @@
-[中文](./README_CN.md)
+[ENGLISH](./README_EN.md)
 
 <h1 align="center">Color Extension</h1>
 
@@ -8,56 +8,57 @@
     <a href="https://www.npmjs.com/package/@jiaminghi/color"><img src="https://img.shields.io/npm/v/@jiaminghi/color.svg" alt="NPM" /> </a>
 </p>
 
-### This plugin provides some extension methods for color.
+### 这是一个提供如下几个方法的颜色插件。
+
 - **[darken](#darken)**
 
-  Deepen color.
+  加深颜色
 
 - **[lighten](#lighten)**
 
-  Brighten color.
+  提亮颜色
 
 - **[fade](#fade)**
 
-  Adjust color opacity.
+  调节颜色透明度
 
 - **[toHex](#toHex)**
 
-  Convert color to Hex color.
+  转换成Hex颜色
 
 - **[toRgb](#toRgb)**
 
-  Convert color to Rgb|Rgba color.
+  将颜色转为Rgb或Rgba颜色
 
 - **[getOpacity](#getOpacity)**
 
-  Get color opacity.
+  获取颜色透明度
 
 - **[getRgbValue](#getRgbValue)**
 
-  Get the color Rgb value.
+  获取颜色的Rgb值
 
 - **[getRgbaValue](#getRgbaValue)**
 
-  Get the color Rgba value.
+  获取颜色的Rgba值
 
 - **[getColorFromRgbValue](#getColorFromRgbValue)**
 
-  Get Color from Rgb|Rgba value.
+  从Rgb或Rgba值获取颜色
 
-### Appendix
+### 附录
 
-- **[Color Keywords](#Color-Keywords)**
+- **[颜色关键字](#颜色关键字)**
 
-  Built-in color keywords.
+  内置颜色关键字
 
-### Install with npm
+### npm安装
 
 ```shell
 $ npm install @jiaminghi/color
 ```
 
-### Use
+### 使用
 
 ```javascript
 import { toHex } from '@jiaminghi/color'
@@ -67,16 +68,16 @@ import { toHex } from '@jiaminghi/color'
 
 ------
 
-<h3 align="center">Examples</h3>
+<h3 align="center">示例</h3>
 
 #### darken
 
 ```javascript
 /**
- * @description Deepen color
- * @param {String} color   Hex|Rgb|Rgba color or color keyword
- * @param {Number} percent Percent of Deepen (1-100)
- * @return {String|Boolean} Rgba color (Invalid input will return false)
+ * @description 加深颜色
+ * @param {String} color   Hex|Rgb|Rgba颜色或颜色关键字
+ * @param {Number} percent 加深的百分比 (1-100)
+ * @return {String|Boolean} Rgba颜色 (无效输入将返回false)
  */
 function darken (color, percent) {
 	//...
@@ -98,10 +99,10 @@ const after = darken(color, 20)
 
 ```javascript
 /**
- * @description Brighten color
- * @param {String} color   Hex|Rgb|Rgba color or color keyword
- * @param {Number} percent Percent of brighten (1-100)
- * @return {String|Boolean} Rgba color (Invalid input will return false)
+ * @description 提亮颜色
+ * @param {String} color   Hex|Rgb|Rgba颜色或颜色关键字
+ * @param {Number} percent 提亮的百分比 (1-100)
+ * @return {String|Boolean} Rgba颜色 (无效输入将返回false)
  */
 function lighten (color, percent) {
 	//...
@@ -123,10 +124,10 @@ const after = lighten(color, 20)
 
 ```javascript
 /**
- * @description Adjust color opacity
- * @param {String} color   Hex|Rgb|Rgba color or color keyword
- * @param {Number} percent Percent of opacity
- * @return {String|Boolean} Rgba color (Invalid input will return false)
+ * @description 调节颜色透明度
+ * @param {String} color   Hex|Rgb|Rgba颜色或颜色关键字
+ * @param {Number} Percent 透明度百分比
+ * @return {String|Boolean} Rgba颜色 (无效输入将返回false)
  */
 function fade (color, percent) {
 	//...
@@ -148,9 +149,9 @@ const after = lighten(color, 20)
 
 ```javascript
 /**
- * @description Convert color to Hex color
- * @param {String} color Hex|Rgb|Rgba color or color keyword
- * @return {String|Boolean} Hex color (Invalid input will return false)
+ * @description 转换成Hex颜色
+ * @param {String} color Hex|Rgb|Rgba颜色或颜色关键字
+ * @return {String|Boolean} Hex颜色 (无效输入将返回false)
  */
 function toHex (color) {
 	//...
@@ -168,10 +169,10 @@ const after = toHex(before)
 
 ```javascript
 /**
- * @description Convert color to Rgb|Rgba color
- * @param {String} color   Hex|Rgb|Rgba color or color keyword
- * @param {Number} opacity The opacity of color
- * @return {String|Boolean} Rgb|Rgba color (Invalid input will return false)
+ * @description 将颜色转为Rgb或Rgba颜色
+ * @param {String} color   Hex|Rgb|Rgba颜色或颜色关键字
+ * @param {Number} opacity 颜色的透明度 (输入该参数将生成Rgba颜色)
+ * @return {String|Boolean} Rgb或Rgba颜色 (无效输入将返回false)
  */
 function toRgb (color, opacity) {
 	//...
@@ -191,9 +192,9 @@ const after2 = toRgb(before, 0.2)
 
 ```javascript
 /**
- * @description Get the opacity of color
- * @param {String} color Hex|Rgb|Rgba color or color keyword
- * @return {Number|Boolean} Color opacity (Invalid input will return false)
+ * @description 获取颜色透明度
+ * @param {String} color Hex|Rgb|Rgba颜色或颜色关键字
+ * @return {Number|Boolean} 颜色透明度 (无效输入将返回false)
  */
 function getOpacity (color) {
 	//...
@@ -214,9 +215,9 @@ const opacity2 = getOpacity(color2)
 
 ```javascript
 /**
- * @description Get the Rgb value of the color
- * @param {String} color Hex|Rgb|Rgba color or color keyword
- * @return {Array<Number>|Boolean} Rgb value of the color (Invalid input will return false)
+ * @description 获取颜色的Rgb值
+ * @param {String} color Hex|Rgb|Rgba颜色或颜色关键字
+ * @return {Array<Number>|Boolean} Rgb值 (无效输入将返回false)
  */
 function getRgbValue (color) {
 	//...
@@ -234,9 +235,9 @@ const rgbValue = getRgbValue(color)
 
 ```javascript
 /**
- * @description Get the Rgba value of the color
- * @param {String} color Hex|Rgb|Rgba color or color keyword
- * @return {Array<Number>|Boolean} Rgba value of the color (Invalid input will return false)
+ * @description 获取颜色的Rgba值
+ * @param {String} color Hex|Rgb|Rgba颜色或颜色关键字
+ * @return {Array<Number>|Boolean} Rgba值 (无效输入将返回false)
  */
 function getRgbaValue (color) {
 	//...
@@ -257,9 +258,9 @@ const rgbaValue2 = getRgbaValue(color2)
 
 ```javascript
 /**
- * @description Get Color from Rgb|Rgba value
- * @param {Array<Number>} value Rgb|Rgba color value
- * @return {String|Boolean} Rgb|Rgba color (Invalid input will return false)
+ * @description 从Rgb或Rgba值获取颜色
+ * @param {Array<Number>} value Rgb或Rgba颜色的值
+ * @return {String|Boolean} Rgb颜色或Rgba颜色 (无效输入将返回false)
  */
 function getColorFromRgbValue (value) {
 	//...
@@ -276,7 +277,7 @@ const color2 = getColorFromRgbValue(value2)
 
 
 
-#### Color Keywords
+#### 颜色关键字
 
 <p align="center">
     <img width="750px" src="./exampleImgs/keywords.png" />
