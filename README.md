@@ -45,6 +45,8 @@
 
   Get Color from Rgb|Rgba value.
 
+### Appendix
+
 - **[Color Keywords](#Color-Keywords)**
 
   Built-in color keywords.
