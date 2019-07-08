@@ -55,7 +55,7 @@
 $ npm install @jiaminghi/color
 ```
 
-### use
+### Use
 
 ```javascript
 import color from '@jiaminghi/color'
