@@ -66,6 +66,20 @@ import { toHex } from '@jiaminghi/color'
 // do something
 ```
 
+### 快速体验
+
+```html
+<!--资源位于个人服务器仅供体验和测试，请勿在生产环境使用-->
+<!--调试版-->
+<script src="http://lib.jiaminghi.com/transition/transition.map.js"></script>
+<!--压缩版-->
+<script src="http://lib.jiaminghi.com/transition/transition.min.js"></script>
+<script>
+  const { darken, lighten } = color
+  // do something
+</script>
+```
+
 ------
 
 <h3 align="center">示例</h3>
