@@ -9,8 +9,9 @@
     "url": "https://github.com/jiaming743/Color.git"
   },
   "scripts": {
-    "compile": "babel -d lib/ src/",
-    "prepublish": "npm run compile",
+    "build": "node build/index.js",
+    "prepublish": "npm run build",
+    "deploy": "node deploy/index.js",
     "test": "mocha"
   },
   "license": "MIT",
@@ -31,7 +32,9 @@
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
     "@babel/register": "^7.4.4",
+    "@jiaminghi/fs": "0.0.2",
     "chai": "^4.2.0",
+    "ftp": "^0.3.10",
     "mocha": "^6.1.4"
   },
   "dependencies": {
