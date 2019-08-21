@@ -75,8 +75,8 @@ import { toHex } from '@jiaminghi/color'
 <!--压缩版-->
 <script src="http://lib.jiaminghi.com/color/color.min.js"></script>
 <script>
-  console.log(color)
-  // { darken, lighten, ... }
+  const { darken, lighten } = window.color
+  // do something
 </script>
 ```
 
