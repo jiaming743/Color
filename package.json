@@ -1,6 +1,6 @@
 {
   "name": "@jiaminghi/color",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "JiaMing <743192023@qq.com>",
   "description": "Color extension",
   "main": "lib/index.js",
@@ -30,7 +30,8 @@
   "devDependencies": {
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.5",
-    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/plugin-transform-runtime": "^7.5.5",
     "@babel/register": "^7.4.4",
     "@jiaminghi/fs": "0.0.2",
     "chai": "^4.2.0",
@@ -38,7 +39,6 @@
     "mocha": "^6.1.4"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.4.4",
-    "core-js": "^3.1.4"
+    "@babel/runtime": "^7.5.5"
   }
 }
