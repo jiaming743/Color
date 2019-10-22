@@ -6,7 +6,7 @@
   "main": "lib/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jiaming743/Color.git"
+    "url": "https://github.com/DataV-Team/Color.git"
   },
   "scripts": {
     "build": "node build/index.js",
@@ -16,7 +16,7 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jiaming743/Color/issues"
+    "url": "https://github.com/DataV-Team/Color/issues"
   },
   "keywords": [
     "color",
@@ -26,7 +26,7 @@
     "darken",
     "lighten"
   ],
-  "homepage": "https://github.com/jiaming743/Color#readme",
+  "homepage": "https://github.com/DataV-Team/Color#readme",
   "devDependencies": {
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.5",
