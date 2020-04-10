@@ -22,7 +22,7 @@ export function isRgb(color: string): boolean {
   if (typeof color !== 'string') return false
   color = color.toLowerCase()
 
-  return /^(rgb|RGB)/.test(color)
+  return /^(rgb\(|RGB\()/.test(color)
 }
 
 /**
