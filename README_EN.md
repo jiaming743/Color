@@ -3,14 +3,14 @@
 <h1 align="center">Color Extension</h1>
 
 <p align="center">
-  <a href="https://travis-ci.com/DataV-Team/Color">
-    <img src="https://img.shields.io/travis/com/DataV-Team/Color.svg" alt="Travis CI" />
+  <a href="https://travis-ci.com/DataV-Team/color">
+    <img src="https://img.shields.io/travis/com/DataV-Team/color.svg" alt="Travis CI" />
   </a>
-  <a href="https://github.com/DataV-Team/Color/blob/master/LICENSE">
-    <img src="https://img.shields.io/github/license/DataV-Team/Color.svg" alt="LICENSE" />
+  <a href="https://github.com/DataV-Team/color/blob/master/LICENSE">
+    <img src="https://img.shields.io/github/license/DataV-Team/color.svg" alt="LICENSE" />
   </a>
-  <a href="https://www.npmjs.com/package/@jiaminghi/Color">
-    <img src="https://img.shields.io/npm/v/@jiaminghi/Color.svg" alt="NPM" />
+  <a href="https://www.npmjs.com/package/@jiaminghi/color">
+    <img src="https://img.shields.io/npm/v/@jiaminghi/color.svg" alt="NPM" />
   </a>
 </p>
 
