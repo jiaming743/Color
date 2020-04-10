@@ -21,7 +21,7 @@
     "publish": "npm run clean && npm run check && npm run build",
     "deploy": "node deploy/index.js",
     "test": "mocha",
-    "check": "npm run type:check && npm run lint && npm run format:check"
+    "check": "npm run type:check && npm run lint && npm run format:check && npm run test"
   },
   "husky": {
     "hooks": {
