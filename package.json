@@ -1,16 +1,25 @@
 {
   "name": "@jiaminghi/color",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "author": "JiaMing <743192023@qq.com>",
   "description": "Color extension",
   "main": "lib/index.js",
+  "unpkg": "dist/index.js",
+  "module": "es/index.js",
+  "types": "types/index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/DataV-Team/Color.git"
   },
   "scripts": {
-    "build": "node build/index.js",
-    "prepublish": "npm run build",
+    "precommit": "node test.js",
+    "clean": "rimraf lib dist es types",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "type:check": "tsc --noEmit",
+    "lint": "eslint --ext js,ts src test",
+    "build": "rollup -c",
+    "publish": "npm run clean && npm run type:check && npm run lint && npm run format:check && npm run build",
     "deploy": "node deploy/index.js",
     "test": "mocha"
   },
@@ -27,18 +36,33 @@
     "lighten"
   ],
   "homepage": "https://github.com/DataV-Team/Color#readme",
-  "devDependencies": {
-    "@babel/cli": "^7.4.4",
-    "@babel/core": "^7.4.5",
-    "@babel/preset-env": "^7.5.5",
-    "@babel/plugin-transform-runtime": "^7.5.5",
-    "@babel/register": "^7.4.4",
-    "@jiaminghi/fs": "0.0.2",
-    "chai": "^4.2.0",
-    "ftp": "^0.3.10",
-    "mocha": "^6.1.4"
-  },
   "dependencies": {
-    "@babel/runtime": "^7.5.5"
+    "@babel/runtime": "^7.7.4"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.6",
+    "@babel/plugin-transform-runtime": "^7.8.3",
+    "@babel/preset-env": "^7.8.6",
+    "@babel/preset-typescript": "^7.9.0",
+    "@babel/register": "^7.9.0",
+    "@types/chai": "^4.2.11",
+    "@types/mocha": "^7.0.2",
+    "@types/node": "^13.11.0",
+    "@typescript-eslint/eslint-plugin": "^2.27.0",
+    "@typescript-eslint/parser": "^2.27.0",
+    "chai": "^4.2.0",
+    "eslint": "^6.8.0",
+    "husky": "^4.2.5",
+    "mocha": "^6.2.3",
+    "prettier": "^2.0.4",
+    "rimraf": "^3.0.2",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-replace": "^2.2.0",
+    "rollup-plugin-terser": "^5.3.0",
+    "rollup-plugin-typescript2": "^0.27.0",
+    "ts-node": "^8.8.2",
+    "typescript": "^3.8.3"
   }
 }

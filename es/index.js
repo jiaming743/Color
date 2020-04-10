@@ -1,7 +1,3 @@
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
 /*! *****************************************************************************
 Copyright (c) Microsoft Corporation. All rights reserved.
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use
@@ -274,16 +270,5 @@ var index = {
   getColorFromRgbValue: getColorFromRgbValue
 };
 
-exports.darken = darken;
-exports.default = index;
-exports.fade = fade;
-exports.getColorFromRgbValue = getColorFromRgbValue;
-exports.getOpacity = getOpacity;
-exports.getRgbValue = getRgbValue;
-exports.getRgbaValue = getRgbaValue;
-exports.isHex = isHex;
-exports.isRgb = isRgb;
-exports.isRgba = isRgba;
-exports.lighten = lighten;
-exports.toHex = toHex;
-exports.toRgb = toRgb;
+export default index;
+export { darken, fade, getColorFromRgbValue, getOpacity, getRgbValue, getRgbaValue, isHex, isRgb, isRgba, lighten, toHex, toRgb };

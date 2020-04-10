@@ -1,3 +1,16 @@
+# 1.0.0-alpha (2020-04-10)
+
+### Upgrade
+
+- **typescript:** Rewrite with typescript.
+
+### New API
+
+- **isHex:** Test is a Hex color.
+- **isRgb:** Test is a Rgb color.
+- **isRgba:** Test is a Rgba color.
+- **isRgbOrRgba:** Test is a Rgb or Rgba color.
+
 # 0.1.1-alpha (2019-08-29)
 
 ### Perfect
@@ -26,22 +39,22 @@
 
 ### Publish
 
-* **version:** V 0.0.4-alpha.
+- **version:** V 0.0.4-alpha.
 
 # 0.0.3-alpha (2019-04-30)
 
 ### Bug Fixes
 
-* **getOpacity:** Abnormal calculation due to spaces.
+- **getOpacity:** Abnormal calculation due to spaces.
 
 # 0.0.2-alpha (2019-04-08)
 
 ### Publish
 
- * **version:** V 0.0.2-alpha.
+- **version:** V 0.0.2-alpha.
 
 # 0.0.1-alpha (2019-04-04)
 
 ### Publish
 
- * **version:** V 0.0.1-alpha.
+- **version:** V 0.0.1-alpha.

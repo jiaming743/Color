@@ -3,45 +3,68 @@
 <h1 align="center">Color Extension</h1>
 
 <p align="center">
-    <a href="https://travis-ci.com/DataV-Team/Color"><img src="https://img.shields.io/travis/com/DataV-Team/color.svg" alt="Travis CI"></a>
-    <a href="https://github.com/DataV-Team/Color/blob/master/LICENSE"><img src="https://img.shields.io/github/license/DataV-Team/bezierCurve.svg" alt="LICENSE" /> </a>
-    <a href="https://www.npmjs.com/package/@jiaminghi/color"><img src="https://img.shields.io/npm/v/@jiaminghi/color.svg" alt="NPM" /> </a>
+  <a href="https://travis-ci.com/DataV-Team/Color">
+    <img src="https://img.shields.io/travis/com/DataV-Team/Color.svg" alt="Travis CI" />
+  </a>
+  <a href="https://github.com/DataV-Team/Color/blob/master/LICENSE">
+    <img src="https://img.shields.io/github/license/DataV-Team/Color.svg" alt="LICENSE" />
+  </a>
+  <a href="https://www.npmjs.com/package/@jiaminghi/Color">
+    <img src="https://img.shields.io/npm/v/@jiaminghi/Color.svg" alt="NPM" />
+  </a>
 </p>
 
 ### This plugin provides some extension methods for color.
-- **[darken](#darken)**
+
+- **[isHex](#isHex)**
+
+  Test if a Hex color.
+
+- **[isRgb](#isRgb)**
+
+  Test if a Rgb color.
+
+* **[isRgba](#isRgba)**
+
+  Test if a Rgba color.
+
+* **[isRgbOrRgba](#isRgbOrRgba)**
+
+  Test if a Rgb or Rgba color.
+
+* **[darken](#darken)**
 
   Deepen color.
 
-- **[lighten](#lighten)**
+* **[lighten](#lighten)**
 
   Brighten color.
 
-- **[fade](#fade)**
+* **[fade](#fade)**
 
   Adjust color opacity.
 
-- **[toHex](#toHex)**
+* **[toHex](#toHex)**
 
   Convert color to Hex color.
 
-- **[toRgb](#toRgb)**
+* **[toRgb](#toRgb)**
 
   Convert color to Rgb|Rgba color.
 
-- **[getOpacity](#getOpacity)**
+* **[getOpacity](#getOpacity)**
 
   Get color opacity.
 
-- **[getRgbValue](#getRgbValue)**
+* **[getRgbValue](#getRgbValue)**
 
   Get the color Rgb value.
 
-- **[getRgbaValue](#getRgbaValue)**
+* **[getRgbaValue](#getRgbaValue)**
 
   Get the color Rgba value.
 
-- **[getColorFromRgbValue](#getColorFromRgbValue)**
+* **[getColorFromRgbValue](#getColorFromRgbValue)**
 
   Get Color from Rgb|Rgba value.
 
@@ -68,33 +91,98 @@ import { toHex } from '@jiaminghi/color'
 ### Quick experience
 
 ```html
-<!--Resources are located on personal servers for experience and testing only, do not use in production environments-->
 <!--Debug version-->
-<script src="http://lib.jiaminghi.com/color/color.map.js"></script>
+<script src="https://unpkg.com/@jiaminghi/color/dist/index.js"></script>
 <!--Compression version-->
-<script src="http://lib.jiaminghi.com/color/color.min.js"></script>
+<script src="https://unpkg.com/@jiaminghi/color/dist/index.min.js"></script>
 <script>
-  const { darken, lighten } = window.color
+  const { darken, lighten } = window.Color
   // do something
 </script>
 ```
 
-------
+---
 
 <h3 align="center">Examples</h3>
 
+#### isHex
+
+```typescript
+/**
+ * @description Test if a Hex color
+ * @param {string} color A color string maybe Hex
+ * @return {boolean} Test result
+ */
+type isHex = (color: string) => boolean
+
+isHex('#000') // true
+isHex('#333333') // true
+isHex('Not A Color') // false
+isHex('rgb(0,0,0)') // false
+isHex('rgba(0,0,0,1)') // false
+```
+
+#### isRgb
+
+```typescript
+/**
+ * @description Test if a Rgb color
+ * @param {string} color A color string maybe Rgb
+ * @return {boolean} Test result
+ */
+type isRgb = (color: string) => boolean
+
+isRgb('rgb(0,0,0)') // true
+isRgb('RGB(0,0,0)') // true
+isRgb('Not A Color') // false
+isRgb('#000') // false
+isRgb('#000000') // false
+```
+
+#### isRgba
+
+```typescript
+/**
+ * @description Test if a Rgba color
+ * @param {string} color A color string maybe Rgba
+ * @return {boolean} Test result
+ */
+type isRgba = (color: string) => boolean
+
+isRgba('rgba(0,0,0,1)') // true
+isRgba('rgb(0,0,0)') // false
+isRgba('Not A Color') // false
+isRgba('#000') // false
+isRgba('#000000') // false
+```
+
+#### isRgbOrRgba
+
+```typescript
+/**
+ * @description Test if a Rgb or Rgba color
+ * @param {string} color A color string maybe Rgb or Rgba
+ * @return {boolean} Test result
+ */
+type isRgbOrRgba = (color: string) => boolean
+
+isRgbOrRgba('rgb(0,0,0)') // true
+isRgbOrRgba('RGB(0,0,0)') // true
+isRgbOrRgba('rgba(0,0,0,1)') // true
+isRgbOrRgba('#000') // false
+isRgbOrRgba('Not A Color') // false
+```
+
 #### darken
 
-```javascript
+```typescript
 /**
  * @description Deepen color
- * @param {String} color   Hex|Rgb|Rgba color or color keyword
- * @param {Number} percent Percent of Deepen (1-100)
- * @return {String|Boolean} Rgba color (Invalid input will return false)
+ * @param {string} color   Hex|Rgb|Rgba color or color keyword
+ * @param {number} percent Percent of Deepen (1-100)
+ * @return {string|false} Rgba color (Invalid input will return false)
  */
-function darken (color, percent) {
-	//...
-}
+type darken = (color: string, percent: number) => string | false
 
 const before = '#3080E8'
 
@@ -106,20 +194,16 @@ const after = darken(color, 20)
     <img width="180px" src="./exampleImgs/1.jpg" />
 </p>
 
-
-
 #### lighten
 
-```javascript
+```typescript
 /**
  * @description Brighten color
- * @param {String} color   Hex|Rgb|Rgba color or color keyword
- * @param {Number} percent Percent of brighten (1-100)
- * @return {String|Boolean} Rgba color (Invalid input will return false)
+ * @param {string} color   Hex|Rgb|Rgba color or color keyword
+ * @param {number} percent Percent of brighten (1-100)
+ * @return {string|false} Rgba color (Invalid input will return false)
  */
-function lighten (color, percent) {
-	//...
-}
+type lighten = (color: string, percent: number) => string | false
 
 const before = '#3080E8'
 
@@ -131,20 +215,16 @@ const after = lighten(color, 20)
     <img width="180px" src="./exampleImgs/2.jpg" />
 </p>
 
-
-
 #### fade
 
-```javascript
+```typescript
 /**
  * @description Adjust color opacity
- * @param {String} color   Hex|Rgb|Rgba color or color keyword
- * @param {Number} percent Percent of opacity
- * @return {String|Boolean} Rgba color (Invalid input will return false)
+ * @param {string} color   Hex|Rgb|Rgba color or color keyword
+ * @param {number} percent Percent of opacity
+ * @return {string|false} Rgba color (Invalid input will return false)
  */
-function fade (color, percent) {
-	//...
-}
+type fade = (color: string, percent: number) => string | false
 
 const before = '#3080E8'
 
@@ -156,19 +236,15 @@ const after = lighten(color, 20)
     <img width="180px" src="./exampleImgs/3.jpg" />
 </p>
 
-
-
 #### toHex
 
-```javascript
+```typescript
 /**
  * @description Convert color to Hex color
- * @param {String} color Hex|Rgb|Rgba color or color keyword
- * @return {String|Boolean} Hex color (Invalid input will return false)
+ * @param {string} color Hex|Rgb|Rgba color or color keyword
+ * @return {string|false} Hex color (Invalid input will return false)
  */
-function toHex (color) {
-	//...
-}
+type toHex = (color: string) => string | false
 
 const before = 'rgb(48,128,232)'
 
@@ -176,20 +252,16 @@ const after = toHex(before)
 // after = '#3080e8'
 ```
 
-
-
 #### toRgb
 
-```javascript
+```typescript
 /**
  * @description Convert color to Rgb|Rgba color
- * @param {String} color   Hex|Rgb|Rgba color or color keyword
- * @param {Number} opacity The opacity of color
- * @return {String|Boolean} Rgb|Rgba color (Invalid input will return false)
+ * @param {string} color   Hex|Rgb|Rgba color or color keyword
+ * @param {number} opacity The opacity of color
+ * @return {string|false} Rgb|Rgba color (Invalid input will return false)
  */
-function toRgb (color, opacity) {
-	//...
-}
+type toRgb = (color: string, opacity: number) => string | false
 
 const before = '#3080E8'
 
@@ -199,19 +271,15 @@ const after2 = toRgb(before, 0.2)
 // after2 = 'rgba(48,128,232,0.2)'
 ```
 
-
-
 #### getOpacity
 
-```javascript
+```typescript
 /**
  * @description Get the opacity of color
- * @param {String} color Hex|Rgb|Rgba color or color keyword
- * @return {Number|Boolean} Color opacity (Invalid input will return false)
+ * @param {string} color Hex|Rgb|Rgba color or color keyword
+ * @return {number|false} Color opacity (Invalid input will return false)
  */
-function getOpacity (color) {
-	//...
-}
+type getOpacity = (color: string) => number | false
 
 const color1 = '#3080E8'
 const color2 = 'rgba(48,128,232,0.2)'
@@ -222,19 +290,16 @@ const opacity2 = getOpacity(color2)
 // opacity2 = 0.2
 ```
 
-
-
 #### getRgbValue
 
-```javascript
+```typescript
 /**
  * @description Get the Rgb value of the color
- * @param {String} color Hex|Rgb|Rgba color or color keyword
- * @return {Array<Number>|Boolean} Rgb value of the color (Invalid input will return false)
+ * @param {string} color Hex|Rgb|Rgba color or color keyword
+ * @return {RgbValue|false} Rgb value of the color (Invalid input will return false)
  */
-function getRgbValue (color) {
-	//...
-}
+type RgbValue = [number, number, number]
+type getRgbValue = (color: string) => RgbValue | false
 
 const color = '#3080E8'
 
@@ -242,19 +307,16 @@ const rgbValue = getRgbValue(color)
 // rgbValue = [48, 128, 232]
 ```
 
-
-
 #### getRgbaValue
 
-```javascript
+```typescript
 /**
  * @description Get the Rgba value of the color
- * @param {String} color Hex|Rgb|Rgba color or color keyword
- * @return {Array<Number>|Boolean} Rgba value of the color (Invalid input will return false)
+ * @param {string} color Hex|Rgb|Rgba color or color keyword
+ * @return {RgbaValue|false} Rgba value of the color (Invalid input will return false)
  */
-function getRgbaValue (color) {
-	//...
-}
+type RgbaValue = [number, number, number, number]
+type getRgbaValue = (color: string) => RgbaValue
 
 const color1 = '#3080E8'
 const color2 = 'rgba(48,128,232,0.2)'
@@ -265,19 +327,18 @@ const rgbaValue2 = getRgbaValue(color2)
 // rgbaValue2 = [48, 128, 232, 0.2]
 ```
 
-
-
 #### getColorFromRgbValue
 
-```javascript
+```typescript
 /**
  * @description Get Color from Rgb|Rgba value
- * @param {Array<Number>} value Rgb|Rgba color value
- * @return {String|Boolean} Rgb|Rgba color (Invalid input will return false)
+ * @param {Value} value Rgb|Rgba color value
+ * @return {string|false} Rgb|Rgba color (Invalid input will return false)
  */
-function getColorFromRgbValue (value) {
-	//...
-}
+type RgbValue = [number, number, number]
+type RgbaValue = [number, number, number, number]
+type Value = RgbValue | RgbaValue
+type getColorFromRgbValue = (value: Value) => string | false
 
 const value1 = [48, 128, 232]
 const value2 = [48, 128, 232, 0.2]
@@ -287,8 +348,6 @@ const color1 = getColorFromRgbValue(value1)
 const color2 = getColorFromRgbValue(value2)
 // color2 = 'rgba(48,128,232,0.2)'
 ```
-
-
 
 #### Color Keywords
 
