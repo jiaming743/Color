@@ -180,9 +180,9 @@ isRgbOrRgba('Not A Color') // false
  * @description Deepen color
  * @param {string} color   Hex|Rgb|Rgba color or color keyword
  * @param {number} percent Percent of Deepen (1-100)
- * @return {string|false} Rgba color (Invalid input will return false)
+ * @return {string|null} Rgba color (Invalid input will return null)
  */
-type darken = (color: string, percent: number) => string | false
+type darken = (color: string, percent: number) => string | null
 
 const before = '#3080E8'
 
@@ -191,7 +191,7 @@ const after = darken(color, 20)
 ```
 
 <p align="center">
-    <img width="180px" src="./exampleImgs/1.jpg" />
+  <img width="180px" src="./exampleImgs/1.jpg" />
 </p>
 
 #### lighten
@@ -201,9 +201,9 @@ const after = darken(color, 20)
  * @description Brighten color
  * @param {string} color   Hex|Rgb|Rgba color or color keyword
  * @param {number} percent Percent of brighten (1-100)
- * @return {string|false} Rgba color (Invalid input will return false)
+ * @return {string|null} Rgba color (Invalid input will return null)
  */
-type lighten = (color: string, percent: number) => string | false
+type lighten = (color: string, percent: number) => string | null
 
 const before = '#3080E8'
 
@@ -212,7 +212,7 @@ const after = lighten(color, 20)
 ```
 
 <p align="center">
-    <img width="180px" src="./exampleImgs/2.jpg" />
+  <img width="180px" src="./exampleImgs/2.jpg" />
 </p>
 
 #### fade
@@ -222,9 +222,9 @@ const after = lighten(color, 20)
  * @description Adjust color opacity
  * @param {string} color   Hex|Rgb|Rgba color or color keyword
  * @param {number} percent Percent of opacity
- * @return {string|false} Rgba color (Invalid input will return false)
+ * @return {string|null} Rgba color (Invalid input will return null)
  */
-type fade = (color: string, percent: number) => string | false
+type fade = (color: string, percent: number) => string | null
 
 const before = '#3080E8'
 
@@ -233,7 +233,7 @@ const after = lighten(color, 20)
 ```
 
 <p align="center">
-    <img width="180px" src="./exampleImgs/3.jpg" />
+  <img width="180px" src="./exampleImgs/3.jpg" />
 </p>
 
 #### toHex
@@ -242,9 +242,9 @@ const after = lighten(color, 20)
 /**
  * @description Convert color to Hex color
  * @param {string} color Hex|Rgb|Rgba color or color keyword
- * @return {string|false} Hex color (Invalid input will return false)
+ * @return {string|null} Hex color (Invalid input will return null)
  */
-type toHex = (color: string) => string | false
+type toHex = (color: string) => string | null
 
 const before = 'rgb(48,128,232)'
 
@@ -259,9 +259,9 @@ const after = toHex(before)
  * @description Convert color to Rgb|Rgba color
  * @param {string} color   Hex|Rgb|Rgba color or color keyword
  * @param {number} opacity The opacity of color
- * @return {string|false} Rgb|Rgba color (Invalid input will return false)
+ * @return {string|null} Rgb|Rgba color (Invalid input will return null)
  */
-type toRgb = (color: string, opacity: number) => string | false
+type toRgb = (color: string, opacity: number) => string | null
 
 const before = '#3080E8'
 
@@ -277,9 +277,9 @@ const after2 = toRgb(before, 0.2)
 /**
  * @description Get the opacity of color
  * @param {string} color Hex|Rgb|Rgba color or color keyword
- * @return {number|false} Color opacity (Invalid input will return false)
+ * @return {number|null} Color opacity (Invalid input will return null)
  */
-type getOpacity = (color: string) => number | false
+type getOpacity = (color: string) => number | null
 
 const color1 = '#3080E8'
 const color2 = 'rgba(48,128,232,0.2)'
@@ -296,10 +296,10 @@ const opacity2 = getOpacity(color2)
 /**
  * @description Get the Rgb value of the color
  * @param {string} color Hex|Rgb|Rgba color or color keyword
- * @return {RgbValue|false} Rgb value of the color (Invalid input will return false)
+ * @return {RgbValue|null} Rgb value of the color (Invalid input will return null)
  */
 type RgbValue = [number, number, number]
-type getRgbValue = (color: string) => RgbValue | false
+type getRgbValue = (color: string) => RgbValue | null
 
 const color = '#3080E8'
 
@@ -313,7 +313,7 @@ const rgbValue = getRgbValue(color)
 /**
  * @description Get the Rgba value of the color
  * @param {string} color Hex|Rgb|Rgba color or color keyword
- * @return {RgbaValue|false} Rgba value of the color (Invalid input will return false)
+ * @return {RgbaValue|null} Rgba value of the color (Invalid input will return null)
  */
 type RgbaValue = [number, number, number, number]
 type getRgbaValue = (color: string) => RgbaValue
@@ -333,12 +333,12 @@ const rgbaValue2 = getRgbaValue(color2)
 /**
  * @description Get Color from Rgb|Rgba value
  * @param {Value} value Rgb|Rgba color value
- * @return {string|false} Rgb|Rgba color (Invalid input will return false)
+ * @return {string|null} Rgb|Rgba color (Invalid input will return null)
  */
 type RgbValue = [number, number, number]
 type RgbaValue = [number, number, number, number]
 type Value = RgbValue | RgbaValue
-type getColorFromRgbValue = (value: Value) => string | false
+type getColorFromRgbValue = (value: Value) => string | null
 
 const value1 = [48, 128, 232]
 const value2 = [48, 128, 232, 0.2]
@@ -352,5 +352,5 @@ const color2 = getColorFromRgbValue(value2)
 #### Color Keywords
 
 <p align="center">
-    <img width="750px" src="./exampleImgs/keywords.png" />
+  <img width="750px" src="./exampleImgs/keywords.png" />
 </p>

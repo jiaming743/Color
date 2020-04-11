@@ -180,9 +180,9 @@ isRgbOrRgba('Not A Color') // false
  * @description 加深颜色
  * @param {string} color   Hex|Rgb|Rgba颜色或颜色关键字
  * @param {number} percent 加深的百分比 (1-100)
- * @return {string|false} Rgba颜色 (无效输入将返回false)
+ * @return {string|null} Rgba颜色 (无效输入将返回null)
  */
-type darken = (color: string, percent: number) => string | false
+type darken = (color: string, percent: number) => string | null
 
 const before = '#3080E8'
 
@@ -191,7 +191,7 @@ const after = darken(color, 20)
 ```
 
 <p align="center">
-    <img width="180px" src="./exampleImgs/1.jpg" />
+  <img width="180px" src="./exampleImgs/1.jpg" />
 </p>
 
 #### lighten
@@ -201,9 +201,9 @@ const after = darken(color, 20)
  * @description 提亮颜色
  * @param {string} color   Hex|Rgb|Rgba颜色或颜色关键字
  * @param {number} percent 提亮的百分比 (1-100)
- * @return {string|false} Rgba颜色 (无效输入将返回false)
+ * @return {string|null} Rgba颜色 (无效输入将返回null)
  */
-type lighten = (color: string, percent: number) => string | false
+type lighten = (color: string, percent: number) => string | null
 
 const before = '#3080E8'
 
@@ -222,9 +222,9 @@ const after = lighten(color, 20)
  * @description 调节颜色透明度
  * @param {string} color   Hex|Rgb|Rgba颜色或颜色关键字
  * @param {number} Percent 透明度百分比
- * @return {string|false} Rgba颜色 (无效输入将返回false)
+ * @return {string|null} Rgba颜色 (无效输入将返回null)
  */
-type fade = (color: string, percent: number) => string | false
+type fade = (color: string, percent: number) => string | null
 
 const before = '#3080E8'
 
@@ -233,7 +233,7 @@ const after = lighten(color, 20)
 ```
 
 <p align="center">
-    <img width="180px" src="./exampleImgs/3.jpg" />
+  <img width="180px" src="./exampleImgs/3.jpg" />
 </p>
 
 #### toHex
@@ -242,7 +242,7 @@ const after = lighten(color, 20)
 /**
  * @description 转换成Hex颜色
  * @param {string} color Hex|Rgb|Rgba颜色或颜色关键字
- * @return {string|false} Hex颜色 (无效输入将返回false)
+ * @return {string|null} Hex颜色 (无效输入将返回null)
  */
 type toHex = (color: string) => string | false
 
@@ -259,9 +259,9 @@ const after = toHex(before)
  * @description 将颜色转为Rgb或Rgba颜色
  * @param {string} color   Hex|Rgb|Rgba颜色或颜色关键字
  * @param {number} opacity 颜色的透明度 (输入该参数将生成Rgba颜色)
- * @return {string|false} Rgb或Rgba颜色 (无效输入将返回false)
+ * @return {string|null} Rgb或Rgba颜色 (无效输入将返回null)
  */
-type toRgb = (color: string, opacity: number) => string | false
+type toRgb = (color: string, opacity: number) => string | null
 
 const before = '#3080E8'
 
@@ -277,9 +277,9 @@ const after2 = toRgb(before, 0.2)
 /**
  * @description 获取颜色透明度
  * @param {string} color Hex|Rgb|Rgba颜色或颜色关键字
- * @return {number|false} 颜色透明度 (无效输入将返回false)
+ * @return {number|null} 颜色透明度 (无效输入将返回null)
  */
-type getOpacity = (color: string) => number | false
+type getOpacity = (color: string) => number | null
 
 const color1 = '#3080E8'
 const color2 = 'rgba(48,128,232,0.2)'
@@ -296,10 +296,10 @@ const opacity2 = getOpacity(color2)
 /**
  * @description 获取颜色的Rgb值
  * @param {string} color Hex|Rgb|Rgba颜色或颜色关键字
- * @return {RgbValue|false} Rgb值 (无效输入将返回false)
+ * @return {RgbValue|null} Rgb值 (无效输入将返回null)
  */
 type RgbValue = [number, number, number]
-type getRgbValue = (color: string) => RgbValue | false
+type getRgbValue = (color: string) => RgbValue | null
 
 const color = '#3080E8'
 
@@ -313,7 +313,7 @@ const rgbValue = getRgbValue(color)
 /**
  * @description 获取颜色的Rgba值
  * @param {String} color Hex|Rgb|Rgba颜色或颜色关键字
- * @return {RgbaValue|false} Rgba值 (无效输入将返回false)
+ * @return {RgbaValue|null} Rgba值 (无效输入将返回null)
  */
 type RgbaValue = [number, number, number, number]
 type getRgbaValue = (color: string) => RgbaValue
@@ -333,12 +333,12 @@ const rgbaValue2 = getRgbaValue(color2)
 /**
  * @description 从Rgb或Rgba值获取颜色
  * @param {Value} value Rgb或Rgba颜色的值
- * @return {string|false} Rgb颜色或Rgba颜色 (无效输入将返回false)
+ * @return {string|null} Rgb颜色或Rgba颜色 (无效输入将返回null)
  */
 type RgbValue = [number, number, number]
 type RgbaValue = [number, number, number, number]
 type Value = RgbValue | RgbaValue
-type getColorFromRgbValue = (value: Value) => string | false
+type getColorFromRgbValue = (value: Value) => string | null
 
 const value1 = [48, 128, 232]
 const value2 = [48, 128, 232, 0.2]
@@ -352,5 +352,5 @@ const color2 = getColorFromRgbValue(value2)
 #### 颜色关键字
 
 <p align="center">
-    <img width="750px" src="./exampleImgs/keywords.png" />
+  <img width="750px" src="./exampleImgs/keywords.png" />
 </p>
