@@ -6,7 +6,7 @@ import { RgbValue, RgbaValue } from 'types/index';
  */
 export declare function isHex(color: string): boolean;
 /**
- * @description Test if a rgb or rgba color
+ * @description Test if a rgb color
  * @param {string} color color string
  * @return {boolean} Test result
  */
@@ -18,11 +18,17 @@ export declare function isRgb(color: string): boolean;
  */
 export declare function isRgba(color: string): boolean;
 /**
+ * @description Test if a rgb or rgba color
+ * @param {string} color color string
+ * @return {boolean} Test result
+ */
+export declare function isRgbOrRgba(color: string): boolean;
+/**
  * @description Get the Rgb value of the color
  * @param {string} color Hex|Rgb|Rgba color or color keyword
- * @return {RgbValue|false} Rgb value of the color (Invalid input will return false)
+ * @return {RgbValue|null} Rgb value of the color (Invalid input will return null)
  */
-export declare function getRgbValue(color: string): RgbValue | false;
+export declare function getRgbValue(color: string): RgbValue | null;
 /**
  * @description Get the opacity of color
  * @param {string} color Hex|Rgb|Rgba color or color keyword
@@ -32,56 +38,57 @@ export declare function getOpacity(color: string): number;
 /**
  * @description Get the Rgba value of the color
  * @param {string} color Hex|Rgb|Rgba color or color keyword
- * @return {RgbaValue|false} Rgba value of the color (Invalid input will return false)
+ * @return {RgbaValue|null} Rgba value of the color (Invalid input will return null)
  */
-export declare function getRgbaValue(color: string): RgbaValue | false;
+export declare function getRgbaValue(color: string): RgbaValue | null;
 /**
  * @description Convert color to Rgb|Rgba color
  * @param {string} color   Hex|Rgb|Rgba color or color keyword
  * @param {number} opacity The opacity of color
- * @return {string|false} Rgb|Rgba color (Invalid input will return false)
+ * @return {string|null} Rgb|Rgba color (Invalid input will return null)
  */
-export declare function toRgb(color: string, opacity?: number): string | false;
+export declare function toRgb(color: string, opacity?: number): string | null;
 /**
  * @description Convert color to Hex color
  * @param {string} color Hex|Rgb|Rgba color or color keyword
- * @return {string|false} Hex color (Invalid input will return false)
+ * @return {string|null} Hex color (Invalid input will return null)
  */
-export declare function toHex(color: string): string | false;
+export declare function toHex(color: string): string | null;
 /**
  * @description Get Color from Rgb|Rgba value
  * @param {RgbValue|RgbaValue} value Rgb|Rgba color value
- * @return {string} Rgb|Rgba color
+ * @return {string|null} Rgb|Rgba color (Invalid input will return null)
  */
-export declare function getColorFromRgbValue(value: RgbValue | RgbaValue): string;
+export declare function getColorFromRgbValue(value: RgbValue | RgbaValue): string | null;
 /**
  * @description Deepen color
  * @param {string} color   Hex|Rgb|Rgba color or color keyword
  * @param {number} percent of Deepen (1-100)
- * @return {string|false} Rgba color (Invalid input will return false)
+ * @return {string|null} Rgba color (Invalid input will return null)
  */
-export declare function darken(color: string, percent?: number): string | false;
+export declare function darken(color: string, percent?: number): string | null;
 /**
  * @description Brighten color
  * @param {string} color   Hex|Rgb|Rgba color or color keyword
  * @param {number} percent of brighten (1-100)
- * @return {string|false} Rgba color (Invalid input will return false)
+ * @return {string|null} Rgba color (Invalid input will return null)
  */
-export declare function lighten(color: string, percent?: number): string | false;
+export declare function lighten(color: string, percent?: number): string | null;
 /**
  * @description Adjust color opacity
  * @param {string} color   Hex|Rgb|Rgba color or color keyword
  * @param {number} percent of opacity
- * @return {string|false} Rgba color (Invalid input will return false)
+ * @return {string|null} Rgba color (Invalid input will return null)
  */
-export declare function fade(color: string, percent?: number): string | false;
+export declare function fade(color: string, percent?: number): string | null;
 declare const _default: {
-    fade: typeof fade;
     isHex: typeof isHex;
     isRgb: typeof isRgb;
+    isRgba: typeof isRgba;
+    isRgbOrRgba: typeof isRgbOrRgba;
+    fade: typeof fade;
     toHex: typeof toHex;
     toRgb: typeof toRgb;
-    isRgba: typeof isRgba;
     darken: typeof darken;
     lighten: typeof lighten;
     getOpacity: typeof getOpacity;
