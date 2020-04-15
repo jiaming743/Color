@@ -22,16 +22,14 @@ module.exports = {
   rules: {
     '@typescript-eslint/no-non-null-assertion': 'off',
     '@typescript-eslint/ban-ts-ignore': 'off',
-    // 'no-unused-vars': 'off',
-    // '@typescript-eslint/no-unused-expressions': 'off',
-    // '@typescript-eslint/no-unused-vars': [
-    //   'error',
-    //   {
-    //     vars: 'all',
-    //     args: 'after-used',
-    //     ignoreRestSiblings: true,
-    //     argsIgnorePattern: '^_', // ignore unused variables whose name is '_'
-    //   },
-    // ],
+    '@typescript-eslint/no-unused-vars': [
+      'error',
+      {
+        vars: 'all',
+        args: 'after-used',
+        ignoreRestSiblings: true,
+        argsIgnorePattern: '^_', // ignore unused variables whose name is '_'
+      },
+    ],
   },
 }
