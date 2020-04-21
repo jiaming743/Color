@@ -62,6 +62,7 @@
     "mocha": "^6.2.3",
     "prettier": "^2.0.4",
     "rimraf": "^3.0.2",
+    "rollup": "^2.6.1",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-replace": "^2.2.0",
