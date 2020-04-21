@@ -235,13 +235,15 @@ function getColorByKeyword(keyword) {
 /**
  * @description Color validator
  * @param {string} color Hex|Rgb|Rgba color or color keywords
- * @return {string|null} Valid color (Invalid input will return null)
+ * @return {string} Color (Invalid input will throw an error)
  */
 
 
 function validator(color) {
   if (isHex(color) || isRgbOrRgba(color)) return color;
-  return getColorByKeyword(color) || null;
+  var keywordColor = getColorByKeyword(color);
+  if (!keywordColor) throw new Error("Color: Invalid Input of " + color);
+  return keywordColor;
 }
 /**
  * @description Get the rgb value of the hex color
@@ -275,13 +277,12 @@ function getRgbValueFromRgb(color) {
 /**
  * @description Get the Rgb value of the color
  * @param {string} color Hex|Rgb|Rgba color or color keyword
- * @return {RgbValue|null} Rgb value of the color (Invalid input will return null)
+ * @return {RgbValue} Rgb value of the color
  */
 
 
 function getRgbValue(color) {
   var validColor = validator(color);
-  if (!validColor) return null;
   var lowerColor = validColor.toLowerCase();
   return isHex(lowerColor) ? getRgbValueFromHex(lowerColor) : getRgbValueFromRgb(lowerColor);
 }
@@ -293,13 +294,13 @@ function getRgbValue(color) {
 
 function getOpacity(color) {
   var validColor = validator(color);
-  if (!validColor || !isRgba(validColor)) return 1;
+  if (!isRgba(validColor)) return 1;
   return Number(validColor.toLowerCase().split(',').slice(-1)[0].replace(/[)|\s]/g, ''));
 }
 /**
  * @description Get the Rgba value of the color
  * @param {string} color Hex|Rgb|Rgba color or color keyword
- * @return {RgbaValue|null} Rgba value of the color (Invalid input will return null)
+ * @return {RgbaValue} Rgba value of the color
  */
 
 function getRgbaValue(color) {
@@ -310,24 +311,22 @@ function getRgbaValue(color) {
  * @description Convert color to Rgb|Rgba color
  * @param {string} color   Hex|Rgb|Rgba color or color keyword
  * @param {number} opacity The opacity of color
- * @return {string|null} Rgb|Rgba color (Invalid input will return null)
+ * @return {string} Rgb|Rgba color
  */
 
 function toRgb(color, opacity) {
   var rgbValue = getRgbValue(color);
-  if (!rgbValue) return null;
   return typeof opacity === 'number' ? "rgba(" + rgbValue.join(',') + "," + opacity + ")" : "rgb(" + rgbValue.join(',') + ")";
 }
 /**
  * @description Convert color to Hex color
  * @param {string} color Hex|Rgb|Rgba color or color keyword
- * @return {string|null} Hex color (Invalid input will return null)
+ * @return {string} Hex color
  */
 
 function toHex(color) {
   if (isHex(color)) return color;
   var colorValue = getRgbValue(color);
-  if (!colorValue) return null;
 
   var format10To16 = function format10To16(_) {
     return Number(_).toString(16).padStart(2, '0');
@@ -338,20 +337,20 @@ function toHex(color) {
 /**
  * @description Get Color from Rgb|Rgba value
  * @param {RgbValue|RgbaValue} value Rgb|Rgba color value
- * @return {string|null} Rgb|Rgba color (Invalid input will return null)
+ * @return {string} Rgb|Rgba color
  */
 
 function getColorFromRgbValue(value) {
-  if (!Array.isArray(value)) return null;
+  if (!Array.isArray(value)) throw new Error("getColorFromRgbValue: " + value + " is not an array");
   var length = value.length;
-  if (length !== 3 && length !== 4) return null;
+  if (length !== 3 && length !== 4) throw new Error("getColorFromRgbValue: value length should be 3 or 4");
   return (length === 3 ? 'rgb(' : 'rgba(') + value.join(',') + ')';
 }
 /**
  * @description Deepen color
  * @param {string} color   Hex|Rgb|Rgba color or color keyword
  * @param {number} percent of Deepen (1-100)
- * @return {string|null} Rgba color (Invalid input will return null)
+ * @return {string} Rgba color
  */
 
 function darken(color, percent) {
@@ -360,7 +359,6 @@ function darken(color, percent) {
   }
 
   var rgbaValue = getRgbaValue(color);
-  if (!rgbaValue) return null;
   rgbaValue = rgbaValue.map(function (v, i) {
     return i === 3 ? v : v - Math.ceil(2.55 * percent);
   }).map(function (v) {
@@ -372,7 +370,7 @@ function darken(color, percent) {
  * @description Brighten color
  * @param {string} color   Hex|Rgb|Rgba color or color keyword
  * @param {number} percent of brighten (1-100)
- * @return {string|null} Rgba color (Invalid input will return null)
+ * @return {string} Rgba color
  */
 
 function lighten(color, percent) {
@@ -381,7 +379,6 @@ function lighten(color, percent) {
   }
 
   var rgbaValue = getRgbaValue(color);
-  if (!rgbaValue) return null;
   rgbaValue = rgbaValue.map(function (v, i) {
     return i === 3 ? v : v + Math.ceil(2.55 * percent);
   }).map(function (v) {
@@ -393,7 +390,7 @@ function lighten(color, percent) {
  * @description Adjust color opacity
  * @param {string} color   Hex|Rgb|Rgba color or color keyword
  * @param {number} percent of opacity
- * @return {string|null} Rgba color (Invalid input will return null)
+ * @return {string} Rgba color
  */
 
 function fade(color, percent) {
@@ -402,7 +399,6 @@ function fade(color, percent) {
   }
 
   var rgbValue = getRgbValue(color);
-  if (!rgbValue) return null;
   return getColorFromRgbValue(__spreadArrays(rgbValue, [percent / 100]));
 }
 var index = {

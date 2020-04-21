@@ -1,6 +1,6 @@
 {
   "name": "@jiaminghi/color",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "JiaMing <743192023@qq.com>",
   "description": "Color extension",
   "main": "lib/index.js",
@@ -13,10 +13,10 @@
   },
   "scripts": {
     "clean": "rimraf lib dist es types",
-    "format": "prettier --write .",
-    "format:check": "prettier --check .",
     "type:check": "tsc --noEmit",
     "lint": "eslint --ext js,ts src test",
+    "format:check": "prettier --check .",
+    "format": "prettier --write .",
     "build": "rollup -c",
     "prepare": "npm run clean && npm run check && npm run build",
     "test": "mocha",

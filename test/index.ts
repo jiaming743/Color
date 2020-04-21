@@ -16,14 +16,12 @@ import {
   getColorFromRgbValue,
 } from '../src/index'
 
+const INVALID_COLOR_REGEXP = /Color: Invalid Input of undefined/
+
 describe('isHex', () => {
   it(`isHex()`, () => {
-    try {
-      // @ts-ignore
-      isHex()
-    } catch (e) {
-      expect(true).to.be.true
-    }
+    // @ts-ignore
+    expect(isHex()).to.be.false
   })
 
   it(`isHex('Not A Color')`, () => {
@@ -57,12 +55,8 @@ describe('isHex', () => {
 
 describe('isRgb', () => {
   it(`isRgb()`, () => {
-    try {
-      // @ts-ignore
-      isRgb()
-    } catch (e) {
-      expect(true).to.be.true
-    }
+    // @ts-ignore
+    expect(isRgb()).to.be.false
   })
 
   it(`isRgb('Not A Color')`, () => {
@@ -96,12 +90,8 @@ describe('isRgb', () => {
 
 describe('isRgba', () => {
   it(`isRgba()`, () => {
-    try {
-      // @ts-ignore
-      isRgba()
-    } catch (e) {
-      expect(true).to.be.true
-    }
+    // @ts-ignore
+    expect(isRgba()).to.be.false
   })
 
   it(`isRgba('Not A Color')`, () => {
@@ -135,12 +125,8 @@ describe('isRgba', () => {
 
 describe('isRgbOrRgba', () => {
   it(`isRgbOrRgba()`, () => {
-    try {
-      // @ts-ignore
-      isRgbOrRgba()
-    } catch (e) {
-      expect(true).to.be.true
-    }
+    // @ts-ignore
+    expect(isRgbOrRgba()).to.be.false
   })
 
   it(`isRgbOrRgba('Not A Color')`, () => {
@@ -173,21 +159,8 @@ describe('isRgbOrRgba', () => {
 })
 
 describe('fade', () => {
-  it(`fade('Not A Color')`, () => {
-    try {
-      fade('Not A Color')
-    } catch (e) {
-      expect(true).to.be.true
-    }
-  })
-
-  it(`fade()`, () => {
-    try {
-      // @ts-ignore
-      fade()
-    } catch (e) {
-      expect(true).to.be.true
-    }
+  it(`fade error`, () => {
+    expect(fade).to.throw(INVALID_COLOR_REGEXP)
   })
 
   it(`fade('black', 50)`, () => {
@@ -244,21 +217,8 @@ describe('fade', () => {
 })
 
 describe('toHex', () => {
-  it(`toHex()`, () => {
-    try {
-      // @ts-ignore
-      toHex()
-    } catch (e) {
-      expect(true).to.be.true
-    }
-  })
-
-  it(`toHex('Not A Color')`, () => {
-    try {
-      toHex('Not A Color')
-    } catch (e) {
-      expect(true).to.be.true
-    }
+  it(`toHex error`, () => {
+    expect(toHex).to.throw(INVALID_COLOR_REGEXP)
   })
 
   it(`toHex('#000')`, () => {
@@ -283,21 +243,8 @@ describe('toHex', () => {
 })
 
 describe('toRgb', () => {
-  it(`toRgb()`, () => {
-    try {
-      // @ts-ignore
-      toRgb()
-    } catch (e) {
-      expect(true).to.be.true
-    }
-  })
-
-  it(`toRgb('Not A Color')`, () => {
-    try {
-      toRgb('Not A Color')
-    } catch (e) {
-      expect(true).to.be.true
-    }
+  it(`toRgb error`, () => {
+    expect(toRgb).to.throw(INVALID_COLOR_REGEXP)
   })
 
   it(`toRgb('#000')`, () => {
@@ -338,21 +285,8 @@ describe('toRgb', () => {
 })
 
 describe('darken', () => {
-  it(`darken()`, () => {
-    try {
-      // @ts-ignore
-      darken()
-    } catch (e) {
-      expect(true).to.be.true
-    }
-  })
-
-  it(`darken('Not A Color')`, () => {
-    try {
-      darken('Not A Color')
-    } catch (e) {
-      expect(true).to.be.true
-    }
+  it(`darken error`, () => {
+    expect(darken).to.throw(INVALID_COLOR_REGEXP)
   })
 
   it(`darken('#3080E8', 20)`, () => {
@@ -385,21 +319,8 @@ describe('darken', () => {
 })
 
 describe('lighten', () => {
-  it(`lighten()`, () => {
-    try {
-      // @ts-ignore
-      darken()
-    } catch (e) {
-      expect(true).to.be.true
-    }
-  })
-
-  it(`lighten('Not A Color')`, () => {
-    try {
-      darken('Not A Color')
-    } catch (e) {
-      expect(true).to.be.true
-    }
+  it(`lighten error`, () => {
+    expect(lighten).to.throw(INVALID_COLOR_REGEXP)
   })
 
   it(`lighten('#3080E8', 20)`, () => {
@@ -432,21 +353,8 @@ describe('lighten', () => {
 })
 
 describe('getOpacity', () => {
-  it(`getOpacity()`, () => {
-    try {
-      // @ts-ignore
-      darken()
-    } catch (e) {
-      expect(true).to.be.true
-    }
-  })
-
-  it(`getOpacity('Not A Color')`, () => {
-    try {
-      darken('Not A Color')
-    } catch (e) {
-      expect(true).to.be.true
-    }
+  it(`getOpacity error`, () => {
+    expect(getOpacity).to.throw(INVALID_COLOR_REGEXP)
   })
 
   it(`getOpacity('#000')`, () => {
@@ -486,22 +394,43 @@ describe('getOpacity', () => {
   })
 })
 
-describe('getRgbaValue', () => {
-  it(`getRgbaValue()`, () => {
-    try {
-      // @ts-ignore
-      getRgbValue()
-    } catch (e) {
-      expect(true).to.be.true
-    }
+describe('getRgbValue', () => {
+  it(`getRgbValue error`, () => {
+    expect(getRgbValue).to.throw(INVALID_COLOR_REGEXP)
   })
 
-  it(`getRgbaValue('Not A Color')`, () => {
-    try {
-      getRgbValue('Not A Color')
-    } catch (e) {
-      expect(true).to.be.true
-    }
+  it(`getRgbValue('black')`, () => {
+    expect(getRgbValue('black')).to.deep.equal([0, 0, 0])
+  })
+
+  it(`getRgbValue('#000')`, () => {
+    expect(getRgbValue('#000')).to.deep.equal([0, 0, 0])
+  })
+
+  it(`getRgbValue('#000000')`, () => {
+    expect(getRgbValue('#000000')).to.deep.equal([0, 0, 0])
+  })
+
+  it(`getRgbValue('rgb(0,0,0)')`, () => {
+    expect(getRgbValue('rgb(0,0,0)')).to.deep.equal([0, 0, 0])
+  })
+
+  it(`getRgbValue('rgb(1, 12,  12)')`, () => {
+    expect(getRgbValue('rgb(1, 12,  123)')).to.deep.equal([1, 12, 123])
+  })
+
+  it(`getRgbValue('rgba(1,12,123,1)')`, () => {
+    expect(getRgbValue('rgba(1,12,123,1)')).to.deep.equal([1, 12, 123])
+  })
+
+  it(`getRgbValue('rgba(1, 12,  123,   1)')`, () => {
+    expect(getRgbValue('rgba(1, 12,  123,   1)')).to.deep.equal([1, 12, 123])
+  })
+})
+
+describe('getRgbaValue', () => {
+  it(`getRgbaValue error`, () => {
+    expect(getRgbaValue).to.throw(INVALID_COLOR_REGEXP)
   })
 
   it(`getRgbaValue('black')`, () => {
@@ -537,61 +466,19 @@ describe('getRgbaValue', () => {
   })
 })
 
-describe('getRgbaValue', () => {
-  it(`getRgbValue()`, () => {
-    try {
-      // @ts-ignore
-      getRgbValue()
-    } catch (e) {
-      expect(true).to.be.true
-    }
-  })
-
-  it(`getRgbValue('Not A Color')`, () => {
-    try {
-      getRgbValue('Not A Color')
-    } catch (e) {
-      expect(true).to.be.true
-    }
-  })
-
-  it(`getRgbValue('black')`, () => {
-    expect(getRgbValue('black')).to.deep.equal([0, 0, 0])
-  })
-
-  it(`getRgbValue('#000')`, () => {
-    expect(getRgbValue('#000')).to.deep.equal([0, 0, 0])
-  })
-
-  it(`getRgbValue('#000000')`, () => {
-    expect(getRgbValue('#000000')).to.deep.equal([0, 0, 0])
-  })
-
-  it(`getRgbValue('rgb(0,0,0)')`, () => {
-    expect(getRgbValue('rgb(0,0,0)')).to.deep.equal([0, 0, 0])
-  })
-
-  it(`getRgbValue('rgb(1, 12,  12)')`, () => {
-    expect(getRgbValue('rgb(1, 12,  123)')).to.deep.equal([1, 12, 123])
-  })
-
-  it(`getRgbValue('rgba(1,12,123,1)')`, () => {
-    expect(getRgbValue('rgba(1,12,123,1)')).to.deep.equal([1, 12, 123])
-  })
-
-  it(`getRgbValue('rgba(1, 12,  123,   1)')`, () => {
-    expect(getRgbValue('rgba(1, 12,  123,   1)')).to.deep.equal([1, 12, 123])
-  })
-})
-
 describe('getColorFromRgbValue', () => {
   it(`getColorFromRgbValue()`, () => {
-    try {
+    expect(() => {
       // @ts-ignore
       getColorFromRgbValue()
-    } catch (e) {
-      expect(true).to.equal(true)
-    }
+    }).to.throw(/is not an array/)
+  })
+
+  it(`getColorFromRgbValue([])`, () => {
+    expect(() => {
+      // @ts-ignore
+      getColorFromRgbValue([])
+    }).to.throw(/value length should be 3 or 4/)
   })
 
   it(`getColorFromRgbValue([0,0,0])`, () => {

@@ -58,12 +58,15 @@ function getColorByKeyword(keyword: keyof typeof ColorKeywords): ColorKeywords {
 /**
  * @description Color validator
  * @param {string} color Hex|Rgb|Rgba color or color keywords
- * @return {string|null} Valid color (Invalid input will return null)
+ * @return {string} Color (Invalid input will throw an error)
  */
-function validator(color: string): string | null {
+function validator(color: string): string {
   if (isHex(color) || isRgbOrRgba(color)) return color
 
-  return getColorByKeyword(color as keyof typeof ColorKeywords) || null
+  const keywordColor = getColorByKeyword(color as keyof typeof ColorKeywords)
+  if (!keywordColor) throw new Error(`Color: Invalid Input of ${color}`)
+
+  return keywordColor
 }
 
 /**
@@ -102,12 +105,10 @@ function getRgbValueFromRgb(color: string): RgbValue {
 /**
  * @description Get the Rgb value of the color
  * @param {string} color Hex|Rgb|Rgba color or color keyword
- * @return {RgbValue|null} Rgb value of the color (Invalid input will return null)
+ * @return {RgbValue} Rgb value of the color
  */
-export function getRgbValue(color: string): RgbValue | null {
+export function getRgbValue(color: string): RgbValue {
   const validColor = validator(color)
-
-  if (!validColor) return null
 
   const lowerColor = validColor.toLowerCase()
 
@@ -122,7 +123,7 @@ export function getRgbValue(color: string): RgbValue | null {
 export function getOpacity(color: string): number {
   const validColor = validator(color)
 
-  if (!validColor || !isRgba(validColor)) return 1
+  if (!isRgba(validColor)) return 1
 
   return Number(
     validColor
@@ -136,9 +137,9 @@ export function getOpacity(color: string): number {
 /**
  * @description Get the Rgba value of the color
  * @param {string} color Hex|Rgb|Rgba color or color keyword
- * @return {RgbaValue|null} Rgba value of the color (Invalid input will return null)
+ * @return {RgbaValue} Rgba value of the color
  */
-export function getRgbaValue(color: string): RgbaValue | null {
+export function getRgbaValue(color: string): RgbaValue {
   const rgbValue = getRgbValue(color)
 
   return rgbValue && ([...rgbValue, getOpacity(color)] as RgbaValue)
@@ -148,11 +149,10 @@ export function getRgbaValue(color: string): RgbaValue | null {
  * @description Convert color to Rgb|Rgba color
  * @param {string} color   Hex|Rgb|Rgba color or color keyword
  * @param {number} opacity The opacity of color
- * @return {string|null} Rgb|Rgba color (Invalid input will return null)
+ * @return {string} Rgb|Rgba color
  */
-export function toRgb(color: string, opacity?: number): string | null {
+export function toRgb(color: string, opacity?: number): string {
   const rgbValue = getRgbValue(color)
-  if (!rgbValue) return null
 
   return typeof opacity === 'number'
     ? `rgba(${rgbValue.join(',')},${opacity})`
@@ -162,13 +162,12 @@ export function toRgb(color: string, opacity?: number): string | null {
 /**
  * @description Convert color to Hex color
  * @param {string} color Hex|Rgb|Rgba color or color keyword
- * @return {string|null} Hex color (Invalid input will return null)
+ * @return {string} Hex color
  */
-export function toHex(color: string): string | null {
+export function toHex(color: string): string {
   if (isHex(color)) return color
 
   const colorValue = getRgbValue(color)
-  if (!colorValue) return null
 
   const format10To16 = (_: number): string => Number(_).toString(16).padStart(2, '0')
 
@@ -178,13 +177,14 @@ export function toHex(color: string): string | null {
 /**
  * @description Get Color from Rgb|Rgba value
  * @param {RgbValue|RgbaValue} value Rgb|Rgba color value
- * @return {string|null} Rgb|Rgba color (Invalid input will return null)
+ * @return {string} Rgb|Rgba color
  */
-export function getColorFromRgbValue(value: RgbValue | RgbaValue): string | null {
-  if (!Array.isArray(value)) return null
+export function getColorFromRgbValue(value: RgbValue | RgbaValue): string {
+  if (!Array.isArray(value)) throw new Error(`getColorFromRgbValue: ${value} is not an array`)
 
   const { length } = value
-  if (length !== 3 && length !== 4) return null
+  if (length !== 3 && length !== 4)
+    throw new Error(`getColorFromRgbValue: value length should be 3 or 4`)
 
   return (length === 3 ? 'rgb(' : 'rgba(') + value.join(',') + ')'
 }
@@ -193,11 +193,10 @@ export function getColorFromRgbValue(value: RgbValue | RgbaValue): string | null
  * @description Deepen color
  * @param {string} color   Hex|Rgb|Rgba color or color keyword
  * @param {number} percent of Deepen (1-100)
- * @return {string|null} Rgba color (Invalid input will return null)
+ * @return {string} Rgba color
  */
-export function darken(color: string, percent = 0): string | null {
+export function darken(color: string, percent = 0): string {
   let rgbaValue = getRgbaValue(color)
-  if (!rgbaValue) return null
 
   rgbaValue = rgbaValue
     .map((v, i) => (i === 3 ? v : v - Math.ceil(2.55 * percent)))
@@ -210,11 +209,10 @@ export function darken(color: string, percent = 0): string | null {
  * @description Brighten color
  * @param {string} color   Hex|Rgb|Rgba color or color keyword
  * @param {number} percent of brighten (1-100)
- * @return {string|null} Rgba color (Invalid input will return null)
+ * @return {string} Rgba color
  */
-export function lighten(color: string, percent = 0): string | null {
+export function lighten(color: string, percent = 0): string {
   let rgbaValue = getRgbaValue(color)
-  if (!rgbaValue) return null
 
   rgbaValue = rgbaValue
     .map((v, i) => (i === 3 ? v : v + Math.ceil(2.55 * percent)))
@@ -227,11 +225,10 @@ export function lighten(color: string, percent = 0): string | null {
  * @description Adjust color opacity
  * @param {string} color   Hex|Rgb|Rgba color or color keyword
  * @param {number} percent of opacity
- * @return {string|null} Rgba color (Invalid input will return null)
+ * @return {string} Rgba color
  */
-export function fade(color: string, percent = 100): string | null {
+export function fade(color: string, percent = 100): string {
   const rgbValue = getRgbValue(color)
-  if (!rgbValue) return null
 
   return getColorFromRgbValue([...rgbValue, percent / 100] as RgbaValue)
 }

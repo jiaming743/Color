@@ -180,9 +180,9 @@ isRgbOrRgba('Not A Color') // false
  * @description Deepen color
  * @param {string} color   Hex|Rgb|Rgba color or color keyword
  * @param {number} percent Percent of Deepen (1-100)
- * @return {string|null} Rgba color (Invalid input will return null)
+ * @return {string} Rgba color (Invalid input will throw an error)
  */
-type darken = (color: string, percent: number) => string | null
+type darken = (color: string, percent: number) => string
 
 const before = '#3080E8'
 
@@ -201,9 +201,9 @@ const after = darken(color, 20)
  * @description Brighten color
  * @param {string} color   Hex|Rgb|Rgba color or color keyword
  * @param {number} percent Percent of brighten (1-100)
- * @return {string|null} Rgba color (Invalid input will return null)
+ * @return {string} Rgba color (Invalid input will throw an error)
  */
-type lighten = (color: string, percent: number) => string | null
+type lighten = (color: string, percent: number) => string
 
 const before = '#3080E8'
 
@@ -222,9 +222,9 @@ const after = lighten(color, 20)
  * @description Adjust color opacity
  * @param {string} color   Hex|Rgb|Rgba color or color keyword
  * @param {number} percent Percent of opacity
- * @return {string|null} Rgba color (Invalid input will return null)
+ * @return {string} Rgba color (Invalid input will throw an error)
  */
-type fade = (color: string, percent: number) => string | null
+type fade = (color: string, percent: number) => string
 
 const before = '#3080E8'
 
@@ -242,9 +242,9 @@ const after = lighten(color, 20)
 /**
  * @description Convert color to Hex color
  * @param {string} color Hex|Rgb|Rgba color or color keyword
- * @return {string|null} Hex color (Invalid input will return null)
+ * @return {string} Hex color (Invalid input will throw an error)
  */
-type toHex = (color: string) => string | null
+type toHex = (color: string) => string
 
 const before = 'rgb(48,128,232)'
 
@@ -259,9 +259,9 @@ const after = toHex(before)
  * @description Convert color to Rgb|Rgba color
  * @param {string} color   Hex|Rgb|Rgba color or color keyword
  * @param {number} opacity The opacity of color
- * @return {string|null} Rgb|Rgba color (Invalid input will return null)
+ * @return {string} Rgb|Rgba color (Invalid input will throw an error)
  */
-type toRgb = (color: string, opacity: number) => string | null
+type toRgb = (color: string, opacity: number) => string
 
 const before = '#3080E8'
 
@@ -277,9 +277,9 @@ const after2 = toRgb(before, 0.2)
 /**
  * @description Get the opacity of color
  * @param {string} color Hex|Rgb|Rgba color or color keyword
- * @return {number|null} Color opacity (Invalid input will return null)
+ * @return {number} Color opacity (Invalid input will throw an error)
  */
-type getOpacity = (color: string) => number | null
+type getOpacity = (color: string) => number
 
 const color1 = '#3080E8'
 const color2 = 'rgba(48,128,232,0.2)'
@@ -296,10 +296,10 @@ const opacity2 = getOpacity(color2)
 /**
  * @description Get the Rgb value of the color
  * @param {string} color Hex|Rgb|Rgba color or color keyword
- * @return {RgbValue|null} Rgb value of the color (Invalid input will return null)
+ * @return {RgbValue} Rgb value of the color (Invalid input will throw an error)
  */
 type RgbValue = [number, number, number]
-type getRgbValue = (color: string) => RgbValue | null
+type getRgbValue = (color: string) => RgbValue
 
 const color = '#3080E8'
 
@@ -313,7 +313,7 @@ const rgbValue = getRgbValue(color)
 /**
  * @description Get the Rgba value of the color
  * @param {string} color Hex|Rgb|Rgba color or color keyword
- * @return {RgbaValue|null} Rgba value of the color (Invalid input will return null)
+ * @return {RgbaValue} Rgba value of the color (Invalid input will throw an error)
  */
 type RgbaValue = [number, number, number, number]
 type getRgbaValue = (color: string) => RgbaValue
@@ -333,7 +333,7 @@ const rgbaValue2 = getRgbaValue(color2)
 /**
  * @description Get Color from Rgb|Rgba value
  * @param {Value} value Rgb|Rgba color value
- * @return {string|null} Rgb|Rgba color (Invalid input will return null)
+ * @return {string} Rgb|Rgba color (Invalid input will throw an error)
  */
 type RgbValue = [number, number, number]
 type RgbaValue = [number, number, number, number]
