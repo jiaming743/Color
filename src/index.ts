@@ -1,4 +1,4 @@
-import { RgbValue, RgbaValue } from 'types/index'
+import { RgbValue, RgbaValue } from './types/index'
 import ColorKeywords from './config/keywords'
 
 /**

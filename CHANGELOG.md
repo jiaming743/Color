@@ -1,4 +1,16 @@
-# 1.0.0-alpha (2020-04-11)
+# 1.1.1 (2020-05-14)
+
+### Bug Fixes
+
+- **types:** Absolute path cause import error.
+
+# 1.1.0 (2020-04-21)
+
+### Perfect
+
+- **devDep:** Add rollup into devDep.
+
+# 1.0.0 (2020-04-11)
 
 ### Upgrade
 
