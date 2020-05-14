@@ -1,4 +1,4 @@
-import { RgbValue, RgbaValue } from 'types/index';
+import { RgbValue, RgbaValue } from './types/index';
 /**
  * @description Test if a hex color
  * @param {string} color color string
