@@ -1,3 +1,9 @@
+# 1.1.3 (2023-01-02)
+
+### Bug Fixes
+
+- **chore:** Module export entry error
+
 # 1.1.2 (2023-01-02)
 
 ### Perfect
