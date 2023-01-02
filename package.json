@@ -1,31 +1,40 @@
 {
   "name": "@jiaminghi/color",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "author": "JiaMing <743192023@qq.com>",
   "description": "Color extension",
-  "main": "lib/index.js",
-  "unpkg": "dist/index.js",
+  "main": "cjs/index.js",
+  "unpkg": "umd/index.js",
   "module": "es/index.js",
-  "types": "types/index.d.ts",
+  "types": "es/index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/DataV-Team/Color.git"
   },
   "scripts": {
-    "clean": "rimraf lib dist es types",
-    "type:check": "tsc --noEmit",
+    "prepare": "husky install",
+    "dev": "ts-node scripts/dev/init.ts && vite --config scripts/dev/vite.config.ts",
+    "clear": "rm es cjs umd -rf",
+    "build": "yarn clear && yarn build:es && yarn build:umd",
+    "build:es": "vite build --config scripts/build/vite.config.ts",
+    "build:umd": "vite build --config scripts/build/vite.config.umd.ts",
+    "check": "yarn lint && yarn lint:type && yarn lint:format && yarn test",
     "lint": "eslint --ext js,ts src test",
-    "format:check": "prettier --check .",
-    "format": "prettier --write .",
-    "build": "rollup -c",
-    "prepare": "npm run clean && npm run check && npm run build",
+    "lint:type": "tsc --project ./tsconfig.json --noEmit",
+    "lint:format": "prettier --check \"src/**/*.ts\"",
+    "format": "prettier --write \"src/**/*.ts\"",
     "test": "mocha",
-    "check": "npm run type:check && npm run lint && npm run format:check && npm run test"
+    "version:test": "ts-node scripts/release/version-generator --type=test"
   },
+  "files": [
+    "es",
+    "cjs",
+    "umd"
+  ],
   "husky": {
     "hooks": {
-      "pre-commit": "npm run check",
-      "pre-push": "npm run check"
+      "pre-commit": "yarn run check",
+      "pre-push": "yarn run check"
     }
   },
   "license": "MIT",
@@ -36,39 +45,35 @@
     "color",
     "hex",
     "rgb",
-    "bgba",
+    "rgba",
     "darken",
     "lighten"
   ],
   "homepage": "https://github.com/DataV-Team/Color#readme",
-  "dependencies": {
-    "@babel/runtime": "^7.7.4"
-  },
   "devDependencies": {
-    "@babel/cli": "^7.8.4",
-    "@babel/core": "^7.8.6",
-    "@babel/plugin-transform-runtime": "^7.8.3",
-    "@babel/preset-env": "^7.8.6",
-    "@babel/preset-typescript": "^7.9.0",
-    "@babel/register": "^7.9.0",
     "@types/chai": "^4.2.11",
     "@types/mocha": "^7.0.2",
-    "@types/node": "^13.11.0",
-    "@typescript-eslint/eslint-plugin": "^2.27.0",
-    "@typescript-eslint/parser": "^2.27.0",
+    "@types/node": "^18.7.18",
+    "@types/prettier": "^2.7.2",
+    "@types/semver": "^7.3.13",
+    "@typescript-eslint/eslint-plugin": "^5.36.1",
+    "@typescript-eslint/parser": "^5.36.1",
+    "@vitejs/plugin-react": "^3.0.0",
     "chai": "^4.2.0",
-    "eslint": "^6.8.0",
-    "husky": "^4.2.5",
+    "eslint": "^8.23.0",
+    "eslint-plugin-import": "^2.26.0",
+    "fs-extra": "^11.1.0",
+    "husky": "^8.0.2",
+    "less": "^4.1.3",
     "mocha": "^6.2.3",
+    "ora": "5.4.1",
     "prettier": "^2.0.4",
-    "rimraf": "^3.0.2",
-    "rollup": "^2.6.1",
-    "rollup-plugin-babel": "^4.4.0",
-    "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-replace": "^2.2.0",
-    "rollup-plugin-terser": "^5.3.0",
-    "rollup-plugin-typescript2": "^0.27.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "semver": "^7.3.8",
     "ts-node": "^8.8.2",
-    "typescript": "^3.8.3"
+    "typescript": "^4.8.3",
+    "vite": "^4.0.0",
+    "vite-plugin-dts": "^1.7.1"
   }
 }

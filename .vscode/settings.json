@@ -1,6 +1,18 @@
 {
+  "files.eol": "\n",
+  "cSpell.words": ["jiaminghi", "rgba"],
   "editor.formatOnSave": true,
-  "[typescript]": {
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "typescript.tsdk": "./node_modules/typescript/lib",
+  "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "typescript.preferences.importModuleSpecifier": "relative",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "eslint.validate": ["javascript"]
 }

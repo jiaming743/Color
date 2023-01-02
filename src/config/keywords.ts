@@ -1,4 +1,4 @@
-enum ColorKeywords {
+export enum ColorKeywords {
   'transparent' = 'rgba(0,0,0,0)',
   'black' = '#000000',
   'silver' = '#C0C0C0',
@@ -147,5 +147,3 @@ enum ColorKeywords {
   'whitesmoke' = '#f5f5f5',
   'yellowgreen' = '#9acd32',
 }
-
-export default ColorKeywords

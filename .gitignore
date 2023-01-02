@@ -1,11 +1,7 @@
-.DS_Store
 node_modules
+.npmrc
 
-# local env files
-.env.local
-.env.*.local
-
-# Log files
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+.dev
+cjs
+es
+umd

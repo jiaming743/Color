@@ -1,15 +1,91 @@
-/*! *****************************************************************************
-Copyright (c) Microsoft Corporation. All rights reserved.
-Licensed under the Apache License, Version 2.0 (the "License"); you may not use
-this file except in compliance with the License. You may obtain a copy of the
-License at http://www.apache.org/licenses/LICENSE-2.0
-
-THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
-WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
-MERCHANTABLITY OR NON-INFRINGEMENT.
-
-See the Apache Version 2.0 License for specific language governing permissions
-and limitations under the License.
-***************************************************************************** */
-function e(){for(var e=0,r=0,a=arguments.length;a>r;r++)e+=arguments[r].length;var f=Array(e),n=0;for(r=0;a>r;r++)for(var t=arguments[r],o=0,i=t.length;i>o;o++,n++)f[n]=t[o];return f}var r;!function(e){e.transparent="rgba(0,0,0,0)",e.black="#000000",e.silver="#C0C0C0",e.gray="#808080",e.white="#FFFFFF",e.maroon="#800000",e.red="#FF0000",e.purple="#800080",e.fuchsia="#FF00FF",e.green="#008000",e.lime="#00FF00",e.olive="#808000",e.yellow="#FFFF00",e.navy="#000080",e.blue="#0000FF",e.teal="#008080",e.aqua="#00FFFF",e.aliceblue="#f0f8ff",e.antiquewhite="#faebd7",e.aquamarine="#7fffd4",e.azure="#f0ffff",e.beige="#f5f5dc",e.bisque="#ffe4c4",e.blanchedalmond="#ffebcd",e.blueviolet="#8a2be2",e.brown="#a52a2a",e.burlywood="#deb887",e.cadetblue="#5f9ea0",e.chartreuse="#7fff00",e.chocolate="#d2691e",e.coral="#ff7f50",e.cornflowerblue="#6495ed",e.cornsilk="#fff8dc",e.crimson="#dc143c",e.cyan="#00ffff",e.darkblue="#00008b",e.darkcyan="#008b8b",e.darkgoldenrod="#b8860b",e.darkgray="#a9a9a9",e.darkgreen="#006400",e.darkgrey="#a9a9a9",e.darkkhaki="#bdb76b",e.darkmagenta="#8b008b",e.darkolivegreen="#556b2f",e.darkorange="#ff8c00",e.darkorchid="#9932cc",e.darkred="#8b0000",e.darksalmon="#e9967a",e.darkseagreen="#8fbc8f",e.darkslateblue="#483d8b",e.darkslategray="#2f4f4f",e.darkslategrey="#2f4f4f",e.darkturquoise="#00ced1",e.darkviolet="#9400d3",e.deeppink="#ff1493",e.deepskyblue="#00bfff",e.dimgray="#696969",e.dimgrey="#696969",e.dodgerblue="#1e90ff",e.firebrick="#b22222",e.floralwhite="#fffaf0",e.forestgreen="#228b22",e.gainsboro="#dcdcdc",e.ghostwhite="#f8f8ff",e.gold="#ffd700",e.goldenrod="#daa520",e.greenyellow="#adff2f",e.grey="#808080",e.honeydew="#f0fff0",e.hotpink="#ff69b4",e.indianred="#cd5c5c",e.indigo="#4b0082",e.ivory="#fffff0",e.khaki="#f0e68c",e.lavender="#e6e6fa",e.lavenderblush="#fff0f5",e.lawngreen="#7cfc00",e.lemonchiffon="#fffacd",e.lightblue="#add8e6",e.lightcoral="#f08080",e.lightcyan="#e0ffff",e.lightgoldenrodyellow="#fafad2",e.lightgray="#d3d3d3",e.lightgreen="#90ee90",e.lightgrey="#d3d3d3",e.lightpink="#ffb6c1",e.lightsalmon="#ffa07a",e.lightseagreen="#20b2aa",e.lightskyblue="#87cefa",e.lightslategray="#778899",e.lightslategrey="#778899",e.lightsteelblue="#b0c4de",e.lightyellow="#ffffe0",e.limegreen="#32cd32",e.linen="#faf0e6",e.magenta="#ff00ff",e.mediumaquamarine="#66cdaa",e.mediumblue="#0000cd",e.mediumorchid="#ba55d3",e.mediumpurple="#9370db",e.mediumseagreen="#3cb371",e.mediumslateblue="#7b68ee",e.mediumspringgreen="#00fa9a",e.mediumturquoise="#48d1cc",e.mediumvioletred="#c71585",e.midnightblue="#191970",e.mintcream="#f5fffa",e.mistyrose="#ffe4e1",e.moccasin="#ffe4b5",e.navajowhite="#ffdead",e.oldlace="#fdf5e6",e.olivedrab="#6b8e23",e.orange="#ffa500",e.orangered="#ff4500",e.orchid="#da70d6",e.palegoldenrod="#eee8aa",e.palegreen="#98fb98",e.paleturquoise="#afeeee",e.palevioletred="#db7093",e.papayawhip="#ffefd5",e.peachpuff="#ffdab9",e.peru="#cd853f",e.pink="#ffc0cb",e.plum="#dda0dd",e.powderblue="#b0e0e6",e.rosybrown="#bc8f8f",e.royalblue="#4169e1",e.saddlebrown="#8b4513",e.salmon="#fa8072",e.sandybrown="#f4a460",e.seagreen="#2e8b57",e.seashell="#fff5ee",e.sienna="#a0522d",e.skyblue="#87ceeb",e.slateblue="#6a5acd",e.slategray="#708090",e.snow="#fffafa",e.springgreen="#00ff7f",e.steelblue="#4682b4",e.tan="#d2b48c",e.thistle="#d8bfd8",e.tomato="#ff6347",e.turquoise="#40e0d0",e.violet="#ee82ee",e.wheat="#f5deb3",e.whitesmoke="#f5f5f5",e.yellowgreen="#9acd32"}(r||(r={}));var a=r;function f(e){return"string"==typeof e&&(e=e.toLowerCase(),/^#([0-9a-fA-f]{3}|[0-9a-fA-f]{6})$/.test(e))}function n(e){return"string"==typeof e&&(e=e.toLowerCase(),/^(rgb\(|RGB\()/.test(e))}function t(e){return"string"==typeof e&&(e=e.toLowerCase(),/^(rgba|RGBA)/.test(e))}function o(e){return/^(rgb|rgba|RGB|RGBA)/.test(e)}function i(e){if(f(e)||o(e))return e;var r=a[e];if(!r)throw Error("Color: Invalid Input of "+e);return r}function l(e){var r=i(e).toLowerCase();return f(r)?function(e){3===(e=e.replace("#","")).length&&(e=Array.from(e).map((function(e){return e+e})).join(""));var r=e.split("");return[,,,].fill(0).map((function(e,a){return parseInt("0x"+r[2*a]+r[2*a+1])}))}(r):function(e){return e.replace(/rgb\(|rgba\(|\)/g,"").split(",").slice(0,3).map((function(e){return parseInt(e)}))}(r)}function d(e){var r=i(e);return t(r)?Number(r.toLowerCase().split(",").slice(-1)[0].replace(/[)|\s]/g,"")):1}function u(r){var a=l(r);return a&&e(a,[d(r)])}function b(e,r){var a=l(e);return"number"==typeof r?"rgba("+a.join(",")+","+r+")":"rgb("+a.join(",")+")"}function g(e){if(f(e))return e;return"#"+l(e).map((function(e){return Number(e).toString(16).padStart(2,"0")})).join("")}function c(e){if(!Array.isArray(e))throw Error("getColorFromRgbValue: "+e+" is not an array");var r=e.length;if(3!==r&&4!==r)throw Error("getColorFromRgbValue: value length should be 3 or 4");return(3===r?"rgb(":"rgba(")+e.join(",")+")"}function s(e,r){void 0===r&&(r=0);var a=u(e);return c(a=a.map((function(e,a){return 3===a?e:e-Math.ceil(2.55*r)})).map((function(e){return 0>e?0:e})))}function m(e,r){void 0===r&&(r=0);var a=u(e);return c(a=a.map((function(e,a){return 3===a?e:e+Math.ceil(2.55*r)})).map((function(e){return e>255?255:e})))}function h(r,a){return void 0===a&&(a=100),c(e(l(r),[a/100]))}var p={isHex:f,isRgb:n,isRgba:t,isRgbOrRgba:o,fade:h,toHex:g,toRgb:b,darken:s,lighten:m,getOpacity:d,getRgbValue:l,getRgbaValue:u,getColorFromRgbValue:c};export default p;export{s as darken,h as fade,c as getColorFromRgbValue,d as getOpacity,l as getRgbValue,u as getRgbaValue,f as isHex,n as isRgb,o as isRgbOrRgba,t as isRgba,m as lighten,g as toHex,b as toRgb};
+import { ColorKeywords as s } from "./config/keywords.mjs";
+function i(r) {
+  return typeof r != "string" ? !1 : (r = r.toLowerCase(), /^#([0-9a-fA-f]{3}|[0-9a-fA-f]{6})$/.test(r));
+}
+function C(r) {
+  return typeof r != "string" ? !1 : (r = r.toLowerCase(), /^(rgb\(|RGB\()/.test(r));
+}
+function b(r) {
+  return typeof r != "string" ? !1 : (r = r.toLowerCase(), /^(rgba|RGBA)/.test(r));
+}
+function l(r) {
+  return /^(rgb|rgba|RGB|RGBA)/.test(r);
+}
+function p(r) {
+  return s[r];
+}
+function g(r) {
+  if (i(r) || l(r))
+    return r;
+  const t = p(r);
+  if (!t)
+    throw new Error(`Color: Invalid Input of ${r}`);
+  return t;
+}
+function m(r) {
+  r = r.replace("#", ""), r.length === 3 && (r = Array.from(r).map((e) => e + e).join(""));
+  const t = r.split("");
+  return new Array(3).fill(0).map((e, n) => parseInt(`0x${t[n * 2]}${t[n * 2 + 1]}`));
+}
+function R(r) {
+  return r.replace(/rgb\(|rgba\(|\)/g, "").split(",").slice(0, 3).map((t) => parseInt(t));
+}
+function a(r) {
+  const e = g(r).toLowerCase();
+  return i(e) ? m(e) : R(e);
+}
+function c(r) {
+  const t = g(r);
+  return b(t) ? Number(
+    t.toLowerCase().split(",").slice(-1)[0].replace(/[)|\s]/g, "")
+  ) : 1;
+}
+function f(r) {
+  const t = a(r);
+  return t && [...t, c(r)];
+}
+function V(r, t) {
+  const e = a(r);
+  return typeof t == "number" ? `rgba(${e.join(",")},${t})` : `rgb(${e.join(",")})`;
+}
+function y(r) {
+  if (i(r))
+    return r;
+  const t = a(r), e = (n) => Number(n).toString(16).padStart(2, "0");
+  return `#${t.map(e).join("")}`;
+}
+function u(r) {
+  if (!Array.isArray(r))
+    throw new Error(`getColorFromRgbValue: ${r} is not an array`);
+  const { length: t } = r;
+  if (t !== 3 && t !== 4)
+    throw new Error("getColorFromRgbValue: value length should be 3 or 4");
+  return (t === 3 ? "rgb(" : "rgba(") + r.join(",") + ")";
+}
+function d(r, t = 0) {
+  let e = f(r);
+  return e = e.map((n, o) => o === 3 ? n : n - Math.ceil(2.55 * t)).map((n) => n < 0 ? 0 : n), u(e);
+}
+function h(r, t = 0) {
+  let e = f(r);
+  return e = e.map((n, o) => o === 3 ? n : n + Math.ceil(2.55 * t)).map((n) => n > 255 ? 255 : n), u(e);
+}
+function $(r, t = 100) {
+  const e = a(r);
+  return u([...e, t / 100]);
+}
+export {
+  d as darken,
+  $ as fade,
+  u as getColorFromRgbValue,
+  c as getOpacity,
+  a as getRgbValue,
+  f as getRgbaValue,
+  i as isHex,
+  C as isRgb,
+  l as isRgbOrRgba,
+  b as isRgba,
+  h as lighten,
+  y as toHex,
+  V as toRgb
+};

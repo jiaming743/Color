@@ -1,3 +1,9 @@
+# 1.1.2 (2023-01-02)
+
+### Perfect
+
+- **chore:** Remove default export.
+
 # 1.1.1 (2020-05-14)
 
 ### Bug Fixes
